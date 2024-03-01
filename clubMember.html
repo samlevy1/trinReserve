@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrinReserve Layout</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    
+    .booking-card {
+      margin: 0.5rem;
+      padding: .3rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .booked {
+      background-color: #f9cd3c;
+    }
+    .pending {
+      background-color: #fff3cd;
+    }
+    .available {
+      background-color: #fff3cd;
+    }
+    .empty {
+      background-color: white;
+      border: 0px;
+    }
+    .header {
+      background-color: #badcff;
+      border: none;
+      border-radius: 0;
+      margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header select,
+    .header input {
+      margin-left: 0.5rem;
+    }
+    .grid {
+      margin-left: 20rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      grid-gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>TrinReserve</h1>
+    </div>
+
+    <div class="header">
+        <select class="form-control">
+          <option>Third Floor</option>
+        </select>
+        <select class="form-control">
+            <option>3/1/24</option>
+          </select>
+        <!-- <input type="text" class="form-control" placeholder="3/1/24"> -->
+    </div>
+    
+    <div class="grid">
+      <div class="booking-card booked">
+        <strong>N323</strong>
+        <p>Math Team</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N325</strong>
+      </div>
+      <div class="booking-card available">
+        <strong>N326</strong>
+      </div>
+      <div class="booking-card empty">
+        <strong></strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N327</strong>
+        <p>Model Congress</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N329</strong>
+      </div>
+      <!-- NEW ROW -->
+      <div class="booking-card available">
+        <strong>N302</strong>
+      </div>
+      <div class="booking-card available">
+        <strong>N304</strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N306</strong>
+        <p>Girls Who Code</p>
+      </div>
+      <div class="booking-card empty">
+        <strong> </strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N312</strong>
+        <p>AQB</p>
+      </div>
+      <div class="booking-card booked">
+        <strong>N314</strong>
+        <p>Classics Club</p>
+      </div>
+      <!-- NEW ROW -->
+      <div class="booking-card available">
+        <strong>N301</strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N303</strong>
+        <p>AAA-SA</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N305</strong>
+        <p>Pending Request</p>
+      </div>
+      <div class="booking-card available">
+        <strong> N311</strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N313</strong>
+        <p>Ethics Bowl</p>
+      </div>
+      <div class="booking-card booked">
+        <strong>N314</strong>
+        <p>Irish Affairs Club</p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
