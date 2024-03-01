@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrinReserve Layout</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    
+    .booking-card {
+      margin: 0.5rem;
+      padding: .3rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .booked {
+      background-color: #f9ca3c;
+    }
+    .pending {
+      background-color: #fff3cd;
+    }
+    .available {
+      background-color: #fff3cd;
+    }
+    .empty {
+      background-color: white;
+      border: 0px;
+    }
+    .header {
+      background-color: #badcff;
+      border: none;
+      border-radius: 0;
+      margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header select,
+    .header input {
+      margin-left: 0.5rem;
+    }
+    .grid {
+      margin-left: 0rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      grid-gap: 1rem;
+    }
+
+    .room-button{
+    border: none;
+  }
+  .room-button {
+    background-color: #f9ca3c;
+  }
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .list-group-item .btn {
+    margin-left: 10px;
+  }
+  .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.float-meetings {
+    width: 30%;
+    float: left;
+    padding: 20px;
+    border: 0px solid red;
+} 
+
+.float-grid {
+    width: 70%;
+    float: left;
+    padding: 20px;
+    padding-top: 60px;
+    border: 0px solid red;
+} 
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>TrinReserve</h1>
+    </div>
+
+    <div class="header">
+        <select class="form-control">
+          <option>Third Floor</option>
+        </select>
+        <select class="form-control">
+            <option>3/1/24</option>
+          </select>
+        <!-- <input type="text" class="form-control" placeholder="3/1/24"> -->
+    </div>
+
+        
+    
+    <div class="float-meetings">
+    <div class="row">
+        <div class="col-md-12">
+          <h2>All Meetings</h2>
+          <ul class="list-group">
+            <li class="list-group-item">Ethics Bowl <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N301">N301</button></li>
+            <li class="list-group-item">AQB <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N303">N303</button></li>
+            <li class="list-group-item">Model Congress <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N305">N305</button></li>
+            <li class="list-group-item">Math Team <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N312">N312</button></li>
+            <li class="list-group-item">Classics Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N313">N313</button></li>
+            <li class="list-group-item">French Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N327 - Click to approve">N327</button></li>
+            <li class="list-group-item">Irish Affairs Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N329 - Click to approve">N329</button></li>
+            <li class="list-group-item">AAA-SA <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N330 - Click to approve">N330</button></li>
+            <li class="list-group-item">Music Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: U202 - Click to approve">U202</button></li>
+            <li class="list-group-item">GirlsWhoCode <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: U214 - Click to approve">U214</button></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="float-grid">
+    <div class="grid">
+      <div class="booking-card booked">
+        <strong>N323</strong>
+        <p>Math Team</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N325</strong>
+      </div>
+      <div class="booking-card available">
+        <strong>N326</strong>
+      </div>
+      <div class="booking-card empty">
+        <strong></strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N327</strong>
+        <p>Model Congress</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N329</strong>
+      </div>
+      <!-- NEW ROW -->
+      <div class="booking-card available">
+        <strong>N302</strong>
+      </div>
+      <div class="booking-card available">
+        <strong>N304</strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N306</strong>
+        <p>Girls Who Code</p>
+      </div>
+      <div class="booking-card empty">
+        <strong> </strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N312</strong>
+        <p>AQB</p>
+      </div>
+      <div class="booking-card booked">
+        <strong>N314</strong>
+        <p>Classics Club</p>
+      </div>
+      <!-- NEW ROW -->
+      <div class="booking-card available">
+        <strong>N301</strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N303</strong>
+        <p>AAA-SA</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N305</strong>
+      </div>
+      <div class="booking-card available">
+        <strong> N311</strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N313</strong>
+        <p>Ethics Bowl</p>
+      </div>
+      <div class="booking-card booked">
+        <strong>N314</strong>
+        <p>Irish Affairs Club</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
