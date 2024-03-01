@@ -14,7 +14,7 @@
       border-radius: 5px;
     }
     .booked {
-      background-color: #f9cd3c;
+      background-color: #f9ca3c;
     }
     .pending {
       background-color: #fff3cd;
@@ -46,6 +46,22 @@
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
       grid-gap: 1rem;
     }
+
+    .room-button{
+    border: none;
+  }
+  .room-button {
+    background-color: #D8EAD8;
+  }
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .list-group-item .btn {
+    margin-left: 10px;
+  }
+
   </style>
 </head>
 <body>
@@ -63,6 +79,26 @@
           </select>
         <!-- <input type="text" class="form-control" placeholder="3/1/24"> -->
     </div>
+
+    
+    <div class="row">
+        <div class="col-md-3">
+          <h2>All Meetings</h2>
+          <ul class="list-group">
+            <li class="list-group-item">Ethics Bowl <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N301">N301</button></li>
+            <li class="list-group-item">E-Sports <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N303">N303</button></li>
+            <li class="list-group-item">Girl Up <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N305">N305</button></li>
+            <li class="list-group-item">Math Team <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N312">N312</button></li>
+            <li class="list-group-item">CAC <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N313">N313</button></li>
+            <li class="list-group-item">French Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N327 - Click to approve">N327</button></li>
+            <li class="list-group-item">Parli <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N329 - Click to approve">N329</button></li>
+            <li class="list-group-item">Discourse <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N330 - Click to approve">N330</button></li>
+            <li class="list-group-item">Music Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: U202 - Click to approve">U202</button></li>
+            <li class="list-group-item">GirlsWhoCode <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: U214 - Click to approve">U214</button></li>
+        </ul>
+        </div>
+      </div>
+
     
     <div class="grid">
       <div class="booking-card booked">
