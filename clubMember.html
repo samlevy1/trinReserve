@@ -41,7 +41,7 @@
       margin-left: 0.5rem;
     }
     .grid {
-      margin-left: 20rem;
+      margin-left: 0rem;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
       grid-gap: 1rem;
@@ -51,7 +51,7 @@
     border: none;
   }
   .room-button {
-    background-color: #D8EAD8;
+    background-color: #f9ca3c;
   }
   .list-group-item {
     display: flex;
@@ -61,6 +61,25 @@
   .list-group-item .btn {
     margin-left: 10px;
   }
+  .float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.float-meetings {
+    width: 30%;
+    float: left;
+    padding: 20px;
+    border: 0px solid red;
+} 
+
+.float-grid {
+    width: 70%;
+    float: left;
+    padding: 20px;
+    padding-top: 60px;
+    border: 0px solid red;
+} 
 
   </style>
 </head>
@@ -80,26 +99,29 @@
         <!-- <input type="text" class="form-control" placeholder="3/1/24"> -->
     </div>
 
+        
     
+    <div class="float-meetings">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-12">
           <h2>All Meetings</h2>
           <ul class="list-group">
             <li class="list-group-item">Ethics Bowl <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N301">N301</button></li>
-            <li class="list-group-item">E-Sports <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N303">N303</button></li>
-            <li class="list-group-item">Girl Up <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N305">N305</button></li>
+            <li class="list-group-item">AQB <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N303">N303</button></li>
+            <li class="list-group-item">Model Congress <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N305">N305</button></li>
             <li class="list-group-item">Math Team <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N312">N312</button></li>
-            <li class="list-group-item">CAC <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N313">N313</button></li>
+            <li class="list-group-item">Classics Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N313">N313</button></li>
             <li class="list-group-item">French Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N327 - Click to approve">N327</button></li>
-            <li class="list-group-item">Parli <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N329 - Click to approve">N329</button></li>
-            <li class="list-group-item">Discourse <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N330 - Click to approve">N330</button></li>
+            <li class="list-group-item">Irish Affairs Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N329 - Click to approve">N329</button></li>
+            <li class="list-group-item">AAA-SA <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N330 - Click to approve">N330</button></li>
             <li class="list-group-item">Music Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: U202 - Click to approve">U202</button></li>
             <li class="list-group-item">GirlsWhoCode <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: U214 - Click to approve">U214</button></li>
         </ul>
         </div>
       </div>
+    </div>
 
-    
+    <div class="float-grid">
     <div class="grid">
       <div class="booking-card booked">
         <strong>N323</strong>
@@ -153,7 +175,6 @@
       </div>
       <div class="booking-card available">
         <strong>N305</strong>
-        <p>Pending Request</p>
       </div>
       <div class="booking-card available">
         <strong> N311</strong>
@@ -167,7 +188,9 @@
         <p>Irish Affairs Club</p>
       </div>
     </div>
+    </div>
   </div>
+</div>
   
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
