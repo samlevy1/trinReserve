@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrinReserve</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  .header {
+    background-color: #b8dfff;
+    padding: 20px;
+    text-align: center;
+  }
+  .details-button, .approve-button {
+    border: none;
+  }
+  .details-button {
+    background-color: #D8EAD8;
+  }
+  .approve-button {
+    background-color: #ffbaa1;
+  }
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .list-group-item .btn {
+    margin-left: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+    <div class="header">
+        <h1>TrinReserve</h1>
+      </div>
+  
+      <div class="header">
+          <select class="form-control">
+            <option>Third Floor</option>
+          </select>
+          <select class="form-control">
+              <option>3/4/24  - 3/8/24              </option>
+            </select>
+          <!-- <input type="text" class="form-control" placeholder="3/1/24"> -->
+      </div>
+
+  <div class="row">
+    <div class="col-md-7">
+      <h2>Approved Meetings</h2>
+      <ul class="list-group">
+        <!-- Approved Meetings -->
+        <li class="list-group-item">Ethics Bowl <span>N301</span><button type="button" class="btn details-button" data-toggle="popover" title="Meeting Details" data-content="Room: N301">details</button></li>
+        <li class="list-group-item">E-Sports <span>N303</span><button type="button" class="btn details-button" data-toggle="popover" title="Meeting Details" data-content="Room: N303">details</button></li>
+        <li class="list-group-item">Girl Up <span>N305</span><button type="button" class="btn details-button" data-toggle="popover" title="Meeting Details" data-content="Room: N305">details</button></li>
+        <li class="list-group-item">Math Team <span>N312</span><button type="button" class="btn details-button" data-toggle="popover" title="Meeting Details" data-content="Room: N312">details</button></li>
+        <li class="list-group-item">CAC <span>N313</span><button type="button" class="btn details-button" data-toggle="popover" title="Meeting Details" data-content="Room: N313">details</button></li>
+      </ul>
+      <h2>Pending Requests</h2>
+      <ul class="list-group">
+        <!-- Pending Requests -->
+        <li class="list-group-item">French Club <span>N327</span><button type="button" class="btn approve-button" data-toggle="popover" title="Meeting Details" data-content="Room: N327 - Click to approve">approve</button></li>
+        <li class="list-group-item">Parli <span>N329</span><button type="button" class="btn approve-button" data-toggle="popover" title="Meeting Details" data-content="Room: N329 - Click to approve">approve</button></li>
+        <li class="list-group-item">Discourse <span>N330</span><button type="button" class="btn approve-button" data-toggle="popover" title="Meeting Details" data-content="Room: N330 - Click to approve">approve</button></li>
+        <li class="list-group-item">Music Club <span>U202</span><button type="button" class="btn approve-button" data-toggle="popover" title="Meeting Details" data-content="Room: U202 - Click to approve">approve</button></li>
+        <li class="list-group-item">GirlsWhoCode <span>U214</span><button type="button" class="btn approve-button" data-toggle="popover" title="Meeting Details" data-content="Room: U214 - Click to approve">approve</button></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

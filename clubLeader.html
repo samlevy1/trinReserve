@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrinReserve Layout</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    
+    .booking-card {
+      margin: 0.5rem;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .booked {
+      background-color: #f8d7da;
+    }
+    .pending {
+      background-color: #fff3cd;
+    }
+    .available {
+      background-color: #d4edda;
+    }
+    .empty {
+      background-color: white;
+      border: 0px;
+    }
+    .header {
+      background-color: #badcff;
+      border: none;
+      border-radius: 0;
+      margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header select,
+    .header input {
+      margin-left: 0.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>TrinReserve</h1>
+    </div>
+
+    <div class="header">
+        <select class="form-control">
+          <option>Third Floor</option>
+        </select>
+        <select class="form-control">
+            <option>3/1/24</option>
+          </select>
+        <!-- <input type="text" class="form-control" placeholder="3/1/24"> -->
+    </div>
+    
+    <div class="grid">
+      <div class="booking-card booked">
+        <strong>N323</strong>
+        <p>BOOKED</p>
+        <p>Math Team</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N325</strong>
+      </div>
+      <div class="booking-card available">
+        <strong>N326</strong>
+      </div>
+      <div class="booking-card empty">
+        <strong></strong>
+      </div>
+      <div class="booking-card available">
+        <strong>N327</strong>
+      </div>
+      <div class="booking-card available">
+        <strong>N329</strong>
+      </div>
+      <!-- NEW ROW -->
+      <div class="booking-card available">
+        <strong>N302</strong>
+      </div>
+      <div class="booking-card available">
+        <strong>N304</strong>
+      </div>
+      <div class="booking-card pending">
+        <strong>N306</strong>
+        <p>Pending Request</p>
+      </div>
+      <div class="booking-card empty">
+        <strong> </strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N312</strong>
+        <p>BOOKED</p>
+        <p>Trinity Times</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N314</strong>
+      </div>
+      <!-- NEW ROW -->
+      <div class="booking-card available">
+        <strong>N301</strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N303</strong>
+        <p>BOOKED</p>
+        <p>AAA-SA</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N305</strong>
+        <p>Pending Request</p>
+      </div>
+      <div class="booking-card available">
+        <strong> N311</strong>
+      </div>
+      <div class="booking-card pending">
+        <strong>N313</strong>
+        <p>Pending Request</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N315</strong>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
