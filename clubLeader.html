@@ -50,7 +50,7 @@
       visibility: hidden;
       position: absolute;
       z-index: 1;
-      width: 100px;
+      width: 200px;
       color: white;
       font-size: 12px;
       background-color: #192733;
@@ -58,7 +58,7 @@
       padding: 10px 15px 10px 15px;
     }
 
-    .available:hover .tooltip-text {
+    .booking-card:hover .tooltip-text {
       visibility: visible;
     }
 
@@ -68,6 +68,10 @@
 
     .details-button {
       background-color: #badcff;
+    }
+
+    .cancel-button {
+      background-color: #ea9999ff;
     }
   </style>
 </head>
@@ -101,18 +105,32 @@
         <p>Math Team</p>
       </div>
       <div class="booking-card available" id = "N325">
-        <span class="tooltip-text">I'm a tooltip!</span>
+        <span class="tooltip-text">
+          <h10>Club Name:</h10>
+          <input type="text" id="N325ClubName" placeholder = "Classics Club"  />
+          <h10>Meeting Details:</h10>
+          <textarea type="text" id="N325MeetingDetails" placeholder = "Scanning Competition"></textarea>
+          <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N325">Reserve</button>
+          
+        </span>
         <strong>N325</strong>
         <br></br>
         <br></br>
-        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+        
 
       </div>
       <div class="booking-card available">
+        <span class="tooltip-text">
+          <h10>Club Name:</h10>
+          <input type="text" id="N325ClubName" placeholder = "Girls Who Code"  />
+          <h10>Meeting Details:</h10>
+          <textarea type="text" id="N325MeetingDetails" placeholder = "Coding"></textarea>
+          <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Reserve</button>
+        </span>
         <strong>N326</strong>
         <br></br>
         <br></br>
-        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+        
 
       </div>
       <div class="booking-card empty">
@@ -123,14 +141,14 @@
         <strong>N327</strong>
         <br></br>
         <br></br>
-        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+        
 
       </div>
       <div class="booking-card available">
         <strong>N329</strong>
         <br></br>
         <br></br>
-        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+        
 
       </div>
       <!-- NEW ROW -->
@@ -138,14 +156,14 @@
         <strong>N302</strong>
         <br></br>
         <br></br>
-        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+        
 
       </div>
       <div class="booking-card available">
         <strong>N304</strong>
         <br></br>
         <br></br>
-        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+        
 
       </div>
       <div class="booking-card pending">
@@ -155,16 +173,23 @@
       <div class="booking-card empty">
         <strong> </strong>
       </div>
+
       <div class="booking-card booked">
         <strong>N312</strong>
         <p>BOOKED</p>
         <p>Trinity Times</p>
+        <span class="tooltip-text">
+          <p>Club Name: Trinity Times</p>
+          <p>Meeting Details: Working on the paper</p>
+          <button type="button" class="btn cancel-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Cancel</button>
+        </span>
       </div>
+
       <div class="booking-card available">
         <strong>N314</strong>
         <br></br>
         <br></br>
-        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+        
 
       </div>
       <!-- NEW ROW -->
@@ -172,13 +197,18 @@
         <strong>N301</strong>
         <br></br>
         <br></br>
-        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+        
 
       </div>
       <div class="booking-card booked">
         <strong>N303</strong>
         <p>BOOKED</p>
         <p>AAA-SA</p>
+        <span class="tooltip-text">
+          <p>Club Name: AAA-SA</p>
+          <p>Meeting Details: Talking about stuff</p>
+          <button type="button" class="btn cancel-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Cancel</button>
+        </span>
       </div>
       <div class="booking-card pending">
         <strong>N305</strong>
@@ -188,7 +218,7 @@
         <strong> N311</strong>
         <br></br>
         <br></br>
-        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+        
 
       </div>
       <div class="booking-card pending">
@@ -199,7 +229,7 @@
         <strong>N315</strong>
         <br></br>
         <br></br>
-        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+        
 
       </div>
     </div>
@@ -209,4 +239,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
+
 </html>
+
+
