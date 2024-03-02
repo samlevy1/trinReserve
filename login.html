@@ -19,6 +19,7 @@
   }
   .details-button {
     background-color: #D8EAD8;
+    font-size: 20px;
   }
   .approve-button {
     background-color: #ffbaa1;
@@ -30,6 +31,12 @@
   }
   .list-group-item .btn {
     margin-left: 10px;
+  }
+  form label, form input, form input[type="submit"] {
+    font-size: 20px; /* Increase font size. Adjust as needed */
+  }
+  form input, form button[type="submit"] {
+    padding: 20px; /* Increase padding for better touch targets */
   }
 </style>
 
@@ -47,13 +54,16 @@
 
 
     <br></br>
+    <center>
     <form action="/action_page.php">
+      
         <label for="fname">Email:</label>
         <input type="text" id="fname" name="fname"><br><br>
         <label for="lname">Password</label>
         <input type="text" id="lname" name="lname"><br><br>
-        <input type="submit" value="Submit">
+        <button type="button" class="btn details-button" data-toggle="popover" title="Meeting Details" data-content="Room: N301">SUBMIT</button>
+     
       </form>
-
+    </center>
 </body>
 </html>
