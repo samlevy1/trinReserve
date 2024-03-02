@@ -61,6 +61,14 @@
     .available:hover .tooltip-text {
       visibility: visible;
     }
+
+    .details-button, .approve-button {
+    border: none;
+    }
+
+    .details-button {
+      background-color: #badcff;
+    }
   </style>
 </head>
 <body>
@@ -72,13 +80,20 @@
     <div class="header">
         <select class="form-control">
           <option>Third Floor</option>
+          <option>Second Floor</option>
+          <option>First Floor</option>
         </select>
         <select class="form-control">
-            <option>3/1/24</option>
+            <option>3/4/24</option>
+            <option>3/5/24</option>
+            <option>3/6/24</option>
+            <option>3/7/24</option>
+            <option>3/8/24</option>
           </select>
         <!-- <input type="text" class="form-control" placeholder="3/1/24"> -->
     </div>
-    
+   
+     
     <div class="grid">
       <div class="booking-card booked">
         <strong>N323</strong>
@@ -88,25 +103,50 @@
       <div class="booking-card available" id = "N325">
         <span class="tooltip-text">I'm a tooltip!</span>
         <strong>N325</strong>
+        <br></br>
+        <br></br>
+        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+
       </div>
       <div class="booking-card available">
         <strong>N326</strong>
+        <br></br>
+        <br></br>
+        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+
       </div>
       <div class="booking-card empty">
         <strong></strong>
+        
       </div>
       <div class="booking-card available">
         <strong>N327</strong>
+        <br></br>
+        <br></br>
+        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+
       </div>
       <div class="booking-card available">
         <strong>N329</strong>
+        <br></br>
+        <br></br>
+        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+
       </div>
       <!-- NEW ROW -->
       <div class="booking-card available">
         <strong>N302</strong>
+        <br></br>
+        <br></br>
+        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+
       </div>
       <div class="booking-card available">
         <strong>N304</strong>
+        <br></br>
+        <br></br>
+        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+
       </div>
       <div class="booking-card pending">
         <strong>N306</strong>
@@ -122,22 +162,34 @@
       </div>
       <div class="booking-card available">
         <strong>N314</strong>
+        <br></br>
+        <br></br>
+        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+
       </div>
       <!-- NEW ROW -->
       <div class="booking-card available">
         <strong>N301</strong>
+        <br></br>
+        <br></br>
+        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+
       </div>
       <div class="booking-card booked">
         <strong>N303</strong>
         <p>BOOKED</p>
         <p>AAA-SA</p>
       </div>
-      <div class="booking-card available">
+      <div class="booking-card pending">
         <strong>N305</strong>
         <p>Pending Request</p>
       </div>
       <div class="booking-card available">
         <strong> N311</strong>
+        <br></br>
+        <br></br>
+        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+
       </div>
       <div class="booking-card pending">
         <strong>N313</strong>
@@ -145,6 +197,10 @@
       </div>
       <div class="booking-card available">
         <strong>N315</strong>
+        <br></br>
+        <br></br>
+        <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N301">Reserve</button>
+
       </div>
     </div>
   </div>
