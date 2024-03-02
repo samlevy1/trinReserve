@@ -45,6 +45,22 @@
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       grid-gap: 1rem;
     }
+
+    .tooltip-text {
+      visibility: hidden;
+      position: absolute;
+      z-index: 1;
+      width: 100px;
+      color: white;
+      font-size: 12px;
+      background-color: #192733;
+      border-radius: 10px;
+      padding: 10px 15px 10px 15px;
+    }
+
+    .available:hover .tooltip-text {
+      visibility: visible;
+    }
   </style>
 </head>
 <body>
@@ -69,7 +85,8 @@
         <p>BOOKED</p>
         <p>Math Team</p>
       </div>
-      <div class="booking-card available">
+      <div class="booking-card available" id = "N325">
+        <span class="tooltip-text">I'm a tooltip!</span>
         <strong>N325</strong>
       </div>
       <div class="booking-card available">
