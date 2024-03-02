@@ -1,10 +1,10 @@
 
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrinReserve</title>
-
 
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -31,7 +31,12 @@
   .list-group-item .btn {
     margin-left: 10px;
   }
+
+  .room-button {
+    background-color: #f9ca3c;
+  }
 </style>
+
 
 
 </head>
@@ -45,15 +50,17 @@
           <h1>TrinReserve</h1>
         </div>
 
+        <h3> Music Club </h3>
 
-    <br></br>
-    <form action="/action_page.php">
-        <label for="fname">Email:</label>
-        <input type="text" id="fname" name="fname"><br><br>
-        <label for="lname">Password</label>
-        <input type="text" id="lname" name="lname"><br><br>
-        <input type="submit" value="Submit">
-      </form>
 
-</body>
-</html>
+        <h7>Meeting Details: Song Writing Seminar </h7>
+        <br></br>
+        <h7>Room: U202 </h7>
+        <br></br>
+        <h7>Number of people attending: 13 </h7>
+
+        <br></br>
+        <button type="button" class="btn room-button" data-toggle="popover" title="Count" data-content="Attending">I would like to attend</button>
+
+
+
