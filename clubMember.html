@@ -81,6 +81,44 @@
     border: 0px solid red;
 } 
 
+.tooltip-text {
+      visibility: hidden;
+      position: absolute;
+      z-index: 1;
+      width: 200px;
+      color: white;
+      font-size: 12px;
+      background-color: #192733;
+      border-radius: 10px;
+      padding: 10px 15px 10px 15px;
+      /* top: -5px;
+      left: 105%; */
+      
+    }
+
+  .l{
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+  }
+
+.booking-card:hover .tooltip-text, .list-group-item:hover .tooltip-text {
+  visibility: visible;
+}
+
+.details-button, .approve-button {
+border: none;
+}
+
+.details-button {
+  background-color: #badcff;
+}
+
+.attend-button {
+  background-color: rgb(153, 234, 154);
+}
+
   </style>
 </head>
 <body>
@@ -106,9 +144,39 @@
         <div class="col-md-12">
           <h2>All Meetings</h2>
           <ul class="list-group">
-            <li class="list-group-item">Ethics Bowl <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N301">N301</button></li>
-            <li class="list-group-item">AQB <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N303">N303</button></li>
-            <li class="list-group-item">Model Congress <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N305">N305</button></li>
+              <li class="list-group-item">
+                Ethics Bowl 
+                <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N301">N301</button>
+                <span class="tooltip-text l">
+                  <p>Club Name: Ethics Bowl</p>
+                  <p>Meeting Details: Debating the ethics of life</p>
+                  <button type="button" class="btn attend-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Attend</button>
+                </span>
+              </li>
+
+              <li class="list-group-item">
+                AQB<button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N301">N301</button>
+                <span class="tooltip-text l">
+                  <p>Club Name: AQB</p>
+                  <p>Meeting Details: Being loud and doing trivia</p>
+                  <button type="button" class="btn attend-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Attend</button>
+                </span>
+              </li>
+              
+              <li class="list-group-item">
+                Model Congress <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N305">N305</button>
+                <span class="tooltip-text l">
+                  <p>Club Name: Model Congress</p>
+                  <p>Meeting Details: Making fake laws</p>
+                  <button type="button" class="btn attend-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Attend</button>
+                </span>
+              </li>
+
+              
+            
+            
+            
+            
             <li class="list-group-item">Math Team <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N312">N312</button></li>
             <li class="list-group-item">Classics Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N313">N313</button></li>
             <li class="list-group-item">French Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N327 - Click to approve">N327</button></li>
@@ -116,7 +184,10 @@
             <li class="list-group-item">AAA-SA <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: N330 - Click to approve">N330</button></li>
             <li class="list-group-item">Music Club <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: U202 - Click to approve">U202</button></li>
             <li class="list-group-item">GirlsWhoCode <button type="button" class="btn room-button" data-toggle="popover" title="Meeting Details" data-content="Room: U214 - Click to approve">U214</button></li>
-        </ul>
+            
+          
+
+          </ul>
         </div>
       </div>
     </div>
@@ -126,6 +197,13 @@
       <div class="booking-card booked">
         <strong>N323</strong>
         <p>Math Team</p>
+
+        <span class="tooltip-text">
+          <p>Club Name: Math Teams</p>
+          <p>Meeting Details: Memorizing digits of pi</p>
+          <button type="button" class="btn cancel-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Attend</button>
+        </span>
+
       </div>
       <div class="booking-card available">
         <strong>N325</strong>
@@ -153,6 +231,11 @@
       <div class="booking-card booked">
         <strong>N306</strong>
         <p>Girls Who Code</p>
+        <span class="tooltip-text">
+          <p>Club Name: Girls Who Code</p>
+          <p>Meeting Details: Trying our best to be women in STEM</p>
+          <button type="button" class="btn cancel-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Attend</button>
+        </span>
       </div>
       <div class="booking-card empty">
         <strong> </strong>
@@ -160,6 +243,12 @@
       <div class="booking-card booked">
         <strong>N312</strong>
         <p>AQB</p>
+
+        <span class="tooltip-text">
+          <p>Club Name: AQB</p>
+          <p>Meeting Details: Being loud and trivia</p>
+          <button type="button" class="btn cancel-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Attend</button>
+        </span>
       </div>
       <div class="booking-card booked">
         <strong>N314</strong>
