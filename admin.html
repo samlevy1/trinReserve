@@ -32,6 +32,10 @@
   .container{
     padding-bottom: 10px;
   }
+  
+  svg{
+    fill: rgb(201, 201, 201);
+  }
 
 </style>
 </head>
@@ -70,14 +74,38 @@
     <div class="col">
       <div class = "addClubLeader">
         <h3>Add Club Leaders</h3>
-        Email:<input>
+
+        <h6>CSV Upload</h6>
+        <form action="/action_page.php">
+          <input type="file" id="myFile" name="filename">
+          <button type="button" class="btn details-button" >Submit</button>
+        </form>
+
         <br>
-        Club Names:<input>
-        <br>
+        <h6>Manual Upload</h6>
+        <label for="fname">Email:</label>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="fname">Club Names:</label>
+        <input type="text" id="fname" name="fname"><br>
+
+
         <button type="button" class="btn details-button" >Submit</button>
     </div>
-  </div>
 
+      <br>
+    <div class = "dataAnalytics">
+      <h3>Website Usage Statistics</h3>
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <!-- Simple rectangle -->
+        <line x1="0" y1="0" x2="0" y2="300" style="stroke:black;stroke-width:5" />
+        <line x1="0" y1="300" x2="500" y2="300" style="stroke:black;stroke-width:2" />
+        
+      
+      </svg>
+
+    </div>
+  </div>
+  
   
 
 
