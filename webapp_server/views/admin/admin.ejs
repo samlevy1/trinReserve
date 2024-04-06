@@ -1,0 +1,78 @@
+<%- include('../partials/header', {title:"TrinReserve"}) -%>
+
+
+<div class="container">
+  <div class="header">
+    <h1>TrinReserve</h1>
+    <select class="form-control">
+      <option>Third Floor</option>
+    </select>
+  </div>
+
+  <div class="row">
+  
+    <div class="col">
+    
+      <h2>Approved Meetings</h2>
+        <ul class="list-group">
+          <!-- Approved Meetings -->
+          
+          <li class="list-group-item">Ethics Bowl <span>N301</span> <span>Monday</span> <a href = "/adminDetails"><button type="button" class="btn details-button">Details</button></a></li>
+          <li class="list-group-item">E-Sports <span>N303</span> <span>Tuesday</span> <a href = "/adminDetails"><button type="button" class="btn details-button">Details</button></a></li>
+          <li class="list-group-item">Girl Up <span>N305</span>  <span>Wednesday</span> <a href = "/adminDetails"><button type="button" class="btn details-button">Details</button></a></li>
+          <li class="list-group-item">Math Team <span>N312</span> <span>Thursday</span> <a href = "/adminDetails"><button type="button" class="btn details-button">Details</button></a></li>
+          <li class="list-group-item">CAC <span>N313</span><span>Friday</span> <a href = "/adminDetails"><button type="button" class="btn details-button">Details</button></a></li>
+        </ul>
+        <h2>Pending Requests</h2>
+        <ul class="list-group">
+          <!-- Pending Requests -->
+          <li class="list-group-item">Music Club <span>N327</span> <span>Tuesday</span><a href = "/adminApprove"><button type="button" class="btn approve-button">Approve</button></a></li>
+          <li class="list-group-item">Parlimentary Debate <span>N329</span> <span>Tuesday</span><a href = "/adminApprove"><button type="button" class="btn approve-button">Approve</button></a></li>
+          <li class="list-group-item">Discourse <span>N330</span> <span>Thursday</span> <a href = "/adminApprove"><button type="button" class="btn approve-button">Approve</button></a></li>
+          <li class="list-group-item">French Club <span>U202</span> <span>Friday</span><a href = "/adminApprove"><button type="button" class="btn approve-button">Approve</button></a></li>
+          <li class="list-group-item">GirlsWhoCode <span>U214</span> <span>Monday</span><a href = "/adminApprove"><button type="button" class="btn approve-button">Approve</button></a></li>
+        </ul>
+    
+    </div>
+    
+    <div class="col">
+      <div class = "addClubLeader">
+        <h3>Add Club Leaders</h3>
+
+        <form action="/action_page.php">
+          <h4>CSV Upload</h4>
+          <input type="file" id="myFile" name="filename">
+          <button type="button" class="btn details-button" >Submit</button>
+        </form>
+        <br>
+        
+        <form action="/action_page.php">
+          <h4>Manual Upload</h4>
+          <label for="fname">Email:</label>
+          <input type="text" id="fname" name="fname"><br>
+          <label for="fname">Club Names:</label>
+          <input type="text" id="fname" name="fname"><br>
+
+          <button type="button" class="btn details-button" >Submit</button>
+        </form>
+      </div>
+      <br><br>
+
+      <div class = "dataAnalytics">
+        <h3>Website Usage Statistics</h3>
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <!-- Simple rectangle -->
+          <line x1="0" y1="0" x2="0" y2="300" style="stroke:black;stroke-width:5" />
+          <line x1="0" y1="300" x2="500" y2="300" style="stroke:black;stroke-width:2" />
+        </svg>
+      </div>
+
+    </div>
+
+    
+  </div>
+
+</div>
+
+
+<%- include('../partials/footer') -%>

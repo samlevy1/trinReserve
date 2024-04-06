@@ -16,6 +16,8 @@ app.set('view engine', 'ejs'); //specify templating library
 
 //.............Define server routes..............................//
 //Express checks routes in the order in which they are defined
+
+//GET home club member page w/o attend function
 app.get('/', async function(request, response) {
   console.log(request.method, request.url) //event logging
 
@@ -26,63 +28,84 @@ app.get('/', async function(request, response) {
     feedback:"",
     username:""
   });
+}); 
+
+//GET login page
+app.get('/loginPage', async function(request, response) {
+  console.log(request.method, request.url) //event logging
+
+
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("login",{
+    feedback:"",
+    username:""
+  });
+}); 
+
+//GET club member page w attend function after logging in
+app.get('/login', async function(request, response) {
+    console.log(request.method, request.url) //event logging
+
+    //Get user login info from query string portion of url
+    let email = request.query.email;
+    let password = request.query.password;
+    console.log(email, password)
+    response.status(200);
+    response.setHeader('Content-Type', 'text/html')
+    response.render("club/clubMember",{
+      feedback:"",
+      username:""
+    });
+    
+    
 });
 
-// app.get('/user', async function(request, response) {
-//   console.log(request.method, request.url) //event logging
+//GET leader page
+app.get('/leaderPage', async function(request, response) {
+  console.log(request.method, request.url) //event logging
 
-//   response.status(200);
-//   response.setHeader('Content-Type', 'text/html')
-//   response.render("user/user_details",{
-//     feedback:"",
-//     username:""
-//   });
-// });
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("club/clubLeader",{
+    feedback:"",
+    username:""
+  });
+});
 
-// app.get('/login', async function(request, response) {
-//     console.log(request.method, request.url) //event logging
+//GET admin page
+app.get('/adminPage', async function(request, response) {
+  console.log(request.method, request.url) //event logging
 
-//     //Get user login info from query string portion of url
-//     let username = request.query.username;
-//     let password = request.query.password;
-//     if(username && password){
-//       //get alleged user 
-//       let url = 'http://localhost:5000/users/'+username;
-//       let res = await fetch(url);
-//       let details = JSON.parse(await res.text());
-//       console.log("Requested user per username:")
-//       console.log(details)
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("admin/admin",{
+    feedback:"",
+    username:""
+  });
+});
 
-//       //Verify user password matches
-//       if (details["password"] && details["password"]==password){
-//         response.status(200);
-//         response.setHeader('Content-Type', 'text/html')
-//         response.render("game/game_details", {
-//           feedback:"",
-//           username: username
-//         });
-//       }else if (details["password"] && details["password"]!=password){
-//         response.status(401); //401 Unauthorized
-//         response.setHeader('Content-Type', 'text/html')
-//         response.render("login", {
-//           feedback:"Incorrect password. Please try again"
-//         });
-//       }else{
-//         response.status(404); //404 Unauthorized
-//         response.setHeader('Content-Type', 'text/html')
-//         response.render("login", {
-//           feedback:"Requested user does not exist"
-//         });
-//       }
-//     }else{
-//       response.status(401); //401 Unauthorized
-//       response.setHeader('Content-Type', 'text/html')
-//       response.render("login", {
-//         feedback:"Please provide both a username and password"
-//       });
-//     }
-    
-// });//GET /login
+app.get('/adminDetails', async function(request, response) {
+  console.log(request.method, request.url) //event logging
+
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("admin/adminDetails",{
+    feedback:"",
+    username:""
+  });
+});
+
+app.get('/adminApprove', async function(request, response) {
+  console.log(request.method, request.url) //event logging
+
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("admin/adminApprove",{
+    feedback:"",
+    username:""
+  });
+});
 
 // app.post('/user', async function(request, response) {
 //   console.log(request.method, request.url) //event logging
