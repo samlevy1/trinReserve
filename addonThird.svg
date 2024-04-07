@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1150 1000">
+  <style>
+    .room:hover { fill: #c0f0b1; }
+    .space:hover { fill: #fa9c8c; }
+    /* Additional styles for hover effects would go here */
+  </style>
+
+
+ <!-- Library -->
+  <path class = "space" id="Library" d="M 100,200 L 700,200 L 700,500 L 100,500 Z" stroke="black" fill="white" />
+  <text x="102" y="150" font-family="Verdana" font-size="10">Library</text>
+
+
+ <!-- Stair H-E-->
+  <path class = "empty" id="Stair H-C" d="M 500,200 L 600,200 L 600,250 L 500,250 Z" stroke="black" fill="#acd2e3" />
+  <text x="520" y="225" font-family="Verdana" font-size="12">Stair H-E</text>
+
+ <!-- Stair H-D-->
+  <path class = "empty" id="Stair H-C" d="M 500,500 L 600,500 L 600,450 L 500,450 Z" stroke="black" fill="#acd2e3" />
+  <text x="520" y="475" font-family="Verdana" font-size="12">Stair H-D</text>
+
+
+<!-- U-301 -->
+  <path class = "space" id="U-301" d="M 100,50 L 200,50 L 200,150 L 100,150 Z" stroke="black" fill="white" />
+  <text x="130" y="100" font-family="Verdana" font-size="12">U-301</text>
+
+<!-- PHOTO -->
+  <path class = "space" id="PHOTO" d="M 200,50 L 300,50 L 300,150 L 200,150 Z" stroke="black" fill="white" />
+  <text x="210" y="100" font-family="Verdana" font-size="12">Photography</text>
+
+
+<!-- Ceramics -->
+  <path class = "space" id="Ceramics" d="M 300,50 L 400,50 L 400,150 L 300,150 Z" stroke="black" fill="white" />
+  <text x="325" y="100" font-family="Verdana" font-size="12">U-303</text>
+
+<!-- U-304 -->
+  <path class = "room" id="U-304" d="M 400,50 L 500,50 L 500,150 L 400,150 Z" stroke="black" fill="white" />
+  <text x="425" y="100" font-family="Verdana" font-size="12">U-304</text>
+
+<!-- U-305 -->
+  <path class = "room" id="U-305" d="M 500,50 L 600,50 L 600,150 L 500,150 Z" stroke="black" fill="white" />
+  <text x="525" y="100" font-family="Verdana" font-size="12">U-305</text>
+
+
+<!-- U-306 -->
+  <path class = "room" id="U-306" d="M 600,50 L 700,50 L 700,150 L 600,150 Z" stroke="black" fill="white" />
+  <text x="625" y="100" font-family="Verdana" font-size="12">U-306</text>
+
+
+
+
+
+
+
+
+  <!-- Continue adding paths and text for each room -->
+</svg>
