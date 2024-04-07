@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1150 1000">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1200 1000">
   <style>
     .room:hover { fill: #c0f0b1; }
     .space:hover { fill: #fa9c8c; }
@@ -27,14 +27,17 @@
 <!-- N-313 -->
   <path class = "room" id="N-313" d="M 450,100 L 550,100 L 550,200 L 450,200 Z" stroke="black" fill="white" />
   <text x="475" y="155" font-family="Verdana" font-size="12">N-313</text>
+  
 
 <!-- N-310 -->
   <path class = "room" id="N-310" d="M 550,100 L 650,100 L 650,200 L 550,200 Z" stroke="black" fill="white" />
   <text x="575" y="155" font-family="Verdana" font-size="12">N-310</text>
+  <text x="560" y="175" font-family="Verdana" font-size="12">History Office</text>
 
 <!-- N-308 -->
   <path class = "room" id="N-308" d="M 650,100 L 750,100 L 750,200 L 650,200 Z" stroke="black" fill="white" />
   <text x="675" y="155" font-family="Verdana" font-size="12">N-308</text>
+    <text x="660" y="175" font-family="Verdana" font-size="12">English Office</text>
 
 <!-- N-307 -->
   <path class = "room" id="N-307" d="M 750,100 L 850,100 L 850,200 L 750,200 Z" stroke="black" fill="white" />
@@ -87,6 +90,8 @@
      <!-- N-306 -->
     <path class = "space" id="N-306" d="M 750,250 L 800,250 L 800,450 L 750,450 Z" stroke="black" fill="white" />
     <text x="755" y="350" font-family="Verdana" font-size="12">N-306</text>
+    <text x="752" y="365" font-family="Verdana" font-size="12">Science</text>
+    <text x="756" y="380" font-family="Verdana" font-size="12">Office</text>
 
     <!-- N-328 -->
     <path class = "space" id="N-306" d="M 800,350 L 850,350 L 850,450 L 800,450 Z" stroke="black" fill="white" />
@@ -113,10 +118,12 @@
  <!-- N-320 -->
   <path class = "space" id="N-320" d="M 125,500 L 250,500 L 250,600 L 125,600 Z" stroke="black" fill="white" />
   <text x="170" y="550" font-family="Verdana" font-size="12">N-320</text>
+  <text x="160" y="566" font-family="Verdana" font-size="12">Math Office</text>
 
  <!-- N-322 -->
   <path class = "space" id="N-322" d="M 250,500 L 350,500 L 350,600 L 250,600 Z" stroke="black" fill="white" />
   <text x="275" y="550" font-family="Verdana" font-size="12">N-322</text>
+    <text x="270" y="565" font-family="Verdana" font-size="12">Math Lab</text>
 
  <!-- N-323 -->
   <path class = "room" id="N-323" d="M 350,500 L 450,500 L 450,600 L 350,600 Z" stroke="black" fill="white" />
@@ -155,6 +162,10 @@
   <text x="1052" y="550" font-family="Verdana" font-size="10">Stair N-C</text>
 
 
+<!-- Library -->
+  <path class = "space" id="Library" d="M 1150,100 L 1200,100 L 1200,600 L 1150,600 Z" stroke="black" fill="white" />
+  <text x="1155" y="350" font-family="Verdana" font-size="12">Library</text>
 
-  <!-- Continue adding paths and text for each room -->
+
+
 </svg>
