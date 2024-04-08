@@ -26,12 +26,14 @@
 
 <!-- PHOTO -->
   <path class = "space" id="PHOTO" d="M 200,50 L 300,50 L 300,150 L 200,150 Z" stroke="black" fill="white" />
-  <text x="210" y="100" font-family="Verdana" font-size="12">Photography</text>
+  <text x="230" y="100" font-family="Verdana" font-size="12">U-302</text>
+  <text x="210" y="115" font-family="Verdana" font-size="12">Photography</text>
 
 
 <!-- Ceramics -->
   <path class = "space" id="Ceramics" d="M 300,50 L 400,50 L 400,150 L 300,150 Z" stroke="black" fill="white" />
   <text x="325" y="100" font-family="Verdana" font-size="12">U-303</text>
+    <text x="315" y="115" font-family="Verdana" font-size="12">Ceramics</text>
 
 <!-- U-304 -->
   <path class = "room" id="U-304" d="M 400,50 L 500,50 L 500,150 L 400,150 Z" stroke="black" fill="white" />
