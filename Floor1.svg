@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <style>
+    .room:hover { fill: #c0f0b1; }
+    .space:hover { fill: #fa9c8c; }
+    /* Additional styles for hover effects would go here */
+  </style>
+
+<!-- FIRST COLUMN   -->
+  <!-- Room U-109 -->
+  <path class = "room" id="U-109" d="M 100,100 L 200,100 L 200,200 L 100,200 Z" stroke="black" fill="white" />
+  <text x="125" y="155" font-family="Verdana" font-size="12">U-109</text>
+
+  <!-- U-108A Trash Room-->
+  <path class = "space" id="U-108A" d="M 100,200 L 200,200 L 200,250 L 100,250 Z" stroke="black" fill="white" />
+  <text x="110" y="220" font-family="Verdana" font-size="12">U-108A</text>
+  <text x="110" y="240" font-family="Verdana" font-size="12">Trash Room</text>
+
+  <!-- U-108 Clerical Center -->
+  <path class = "space" id="U-108" d="M 100,300 L 200,300 L 200,250 L 100,250 Z" stroke="black" fill="white" />
+  <text x="110" y="270" font-family="Verdana" font-size="12">U-108</text>
+  <text x="110" y="290" font-family="Verdana" font-size="12">Clerical Center</text>
+
+  <!-- U-106 Community Service -->
+  <path class = "space" id="U-106" d="M 100,300 L 200,300 L 200,350 L 100,350 Z" stroke="black" fill="white" />
+  <text x="105" y="330" font-family="Verdana" font-size="12">U-106:Service</text>
+
+  <!-- U-105 Chaplain -->
+  <path class = "space" id="U-105" d="M 100,400 L 200,400 L 200,350 L 100,350 Z" stroke="black" fill="white" />
+  <text x="103" y="380" font-family="Verdana" font-size="12">U-105:Chaplain </text>
+
+  <!-- U-104 Chaplain -->
+  <path class = "space" id="U-104" d="M 100,400 L 200,400 L 200,500 L 100,500 Z" stroke="black" fill="white" />
+  <text x="103" y="460" font-family="Verdana" font-size="12">U-104:Chaplain</text>
+
+
+<!-- SECOND COLUMN  -->
+  <!-- empty -->
+  <path class = "empty" id="empty" d="M 235,100 L 435,100 L 435,250 L 235,250 Z" stroke="black" fill="grey" />
+
+ <!-- Stair H-C -->
+  <path class = "empty" id="Stair H-C" d="M 235,300 L 335,300 L 335,250 L 235,250 Z" stroke="black" fill="#acd2e3" />
+  <text x="250" y="280" font-family="Verdana" font-size="12">Stair H-C</text>
+
+  <!-- empty -->
+  <path class = "empty" id="empty" d="M 235,300 L 335,300 L 335,450 L 235,450 Z" stroke="black" fill="grey" />
+
+  <!-- empty -->
+  <path class = "empty" id="Stair H-B" d="M 235,500 L 335,500 L 335,450 L 235,450 Z" stroke="black" fill="#acd2e3" />
+  <text x="250" y="480" font-family="Verdana" font-size="12">Stair H-B</text>
+
+   <!-- empty -->
+  <path class = "empty" id="empty" d="M 435,400 L 335,400 L 335,250 L 435,250 Z" stroke="black" fill="grey" />
+
+    <!-- nurse -->
+  <path class = "space" id="U-110" d="M 435,400 L 335,400 L 335,500 L 435,500 Z" stroke="black" fill="white" />
+  <text x="345" y="450" font-family="Verdana" font-size="12">U-110:Nurse</text>
+
+  <!-- U-113 -->
+  <path class = "room" id="U-113" d="M 535,100 L 435,100 L 435,200 L 535,200 Z" stroke="black" fill="white" />
+  <text x="460" y="155" font-family="Verdana" font-size="12">U-113</text>
+
+ <!-- U-117A -->
+  <path class = "space" id="U-117A" d="M 535,200 L 435,200 L 435,250 L 535,250 Z" stroke="black" fill="#ddbdfc" />
+  <text x="447" y="220" font-family="Verdana" font-size="12">U-117A</text>
+  <text x="447" y="240" font-family="Verdana" font-size="12">Bathroom</text>
+
+<!-- Stair H-E-->
+  <path class = "empty" id="Stair H-E" d="M 535,300 L 435,300 L 435,250 L 535,250 Z" stroke="black" fill="#acd2e3" />
+  <text x="450" y="280" font-family="Verdana" font-size="12">Stair H-E</text>
+
+  <!-- U-112 -->
+  <path class = "space" id="U-112" d="M 535,300 L 435,300 L 435,350 L 535,350 Z" stroke="black" fill="white" />
+  <text x="450" y="320" font-family="Verdana" font-size="12">U-112</text>
+  <text x="450" y="340" font-family="Verdana" font-size="12">Facilities</text>
+
+  <!-- U-117B -->
+  <path class = "space" id="U-117B" d="M 535,350 L 435,350 L 435,400 L 535,400 Z" stroke="black" fill="#ddbdfc" />
+  <text x="450" y="370" font-family="Verdana" font-size="12">U-117B</text>
+  <text x="450" y="390" font-family="Verdana" font-size="12">Bathroom</text>
+
+  <!-- U-111 -->
+  <path class = "space" id="U-111" d="M 535,450 L 435,450 L 435,400 L 535,400 Z" stroke="black" fill="white" />
+  <text x="450" y="420" font-family="Verdana" font-size="12">U-111</text>
+  <text x="450" y="440" font-family="Verdana" font-size="12">College</text>
+
+  <!-- Stair H-D -->
+  <path class = "empty" id="Stair H-D" d="M 535,500 L 435,500 L 435,450 L 535,450 Z" stroke="black" fill="#acd2e3" />
+  <text x="450" y="480" font-family="Verdana" font-size="12">Stair H-D</text>
+
+
+<!-- THIRD COLUMN -->
+  <!-- U-114 -->
+  <path class = "room" id="U-114" d="M 570,100 L 670,100 L 670,200 L 570,200 Z" stroke="black" fill="white" />
+  <text x="595" y="155" font-family="Verdana" font-size="12">U-114</text>
+
+  <!-- U-115 -->
+  <path class = "space" id="U-115" d="M 570,200 L 670,200 L 670,250 L 570,250 Z" stroke="black" fill="white" />
+  <text x="595" y="220" font-family="Verdana" font-size="12">U-115</text>
+  <text x="595" y="240" font-family="Verdana" font-size="12">College</text>
+
+  <!-- U-116 -->
+  <path class = "space" id="U-116" d="M 570,250 L 670,250 L 670,300 L 570,300 Z" stroke="black" fill="white" />
+  <text x="595" y="270" font-family="Verdana" font-size="12">U-116</text>
+  <text x="595" y="290" font-family="Verdana" font-size="12">College</text>
+
+    <!-- U-117 -->
+  <path class = "space" id="U-117" d="M 570,350 L 670,350 L 670,300 L 570,300 Z" stroke="black" fill="white" />
+  <text x="595" y="320" font-family="Verdana" font-size="12">U-117</text>
+  <text x="595" y="340" font-family="Verdana" font-size="12">College</text>
+
+   <!-- U-118 -->
+  <path class = "space" id="U-118" d="M 570,350 L 670,350 L 670,500 L 570,500 Z" stroke="black" fill="white" />
+  <text x="595" y="420" font-family="Verdana" font-size="12">U-118</text>
+  <text x="595" y="440" font-family="Verdana" font-size="12">Fac Lounge</text>
+
+   <!-- U119 -->
+  <path class = "room" id="U-119" d="M 570,600 L 670,600 L 670,500 L 570,500 Z" stroke="black" fill="white" />
+  <text x="595" y="550" font-family="Verdana" font-size="12">U-119</text>
+  
+   <!-- U120 -->
+  <path class = "room" id="U-120" d="M 570,600 L 670,600 L 670,700 L 570,700 Z" stroke="black" fill="white" />
+  <text x="595" y="650" font-family="Verdana" font-size="12">U-120</text>
+
+  <!-- CHAPEL -->
+  <path class = "space" id="U-108" d="M 235,535 L 535,535 L 535,800 L 235,800 Z" stroke="black" fill="white" />
+  <text x="340" y="650" font-family="Verdana" font-size="12">Hawley Chapel</text>
+
+
+  <!-- Continue adding paths and text for each room -->
+</svg>
