@@ -11,7 +11,7 @@
           <option value="SecondFloorOld">Second Floor Old Building</option>
           <option value="SecondFloorNew">Second Floor New Building</option>
           <option value="ThirdFloorOld">Third Floor Old Building</option>
-          <option value="ThirdFloorNew">Third Floor New Building</option>
+          <option value="ThirdFloorNew" selected>Third Floor New Building</option>
         </select>
         <select class="form-control">
             <option>3/4/24</option>
@@ -113,8 +113,8 @@
       document.getElementById(selectedFloor).style.display = 'block';
     }
 
-    // Initialize with the first floor showing, or adjust based on your requirements
-    showFloor('FirstFloor');
+    // Initialize with the Third Floor New Building showing
+    showFloor('ThirdFloorNew');
 
     floorSelect.addEventListener('change', function() {
       showFloor(this.value);
