@@ -1,0 +1,170 @@
+<%- include('../partials/header', {title:"TrinReserve"}) -%>
+
+  <div class="container">
+    <div class="header">
+      <h1>TrinReserve</h1>
+    </div>
+
+    <div class="header">
+        <select class="form-control">
+          <option>Third Floor</option>
+          <option>Second Floor</option>
+          <option>First Floor</option>
+        </select>
+        <select class="form-control">
+            <option>3/4/24</option>
+            <option>3/5/24</option>
+            <option>3/6/24</option>
+            <option>3/7/24</option>
+            <option>3/8/24</option>
+          </select>
+        <!-- <input type="text" class="form-control" placeholder="3/1/24"> -->
+    </div>
+
+    <!-- <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button> -->
+    
+    <div class="float-meetings">
+    <div class="row">
+        <div class="col-md-12">
+          <h2>All Meetings</h2>
+          
+          <ul class="list-group">
+              <li class="list-group-item">
+                Ethics Bowl 
+                
+                <button type="button" class="btn room-button" >N301</button>
+                <span class="tooltip-text l">
+                  <p>Club Name: Ethics Bowl</p>
+                  <p>Meeting Details: Debating the ethics of life</p>
+                  <a href = "/attend/date/N301/email"><button type="button" class="btn attend-button">Attend</button></a>
+                </span>
+              </li>
+
+              <li class="list-group-item">
+                AQB<button type="button" class="btn room-button">N301</button>
+                <span class="tooltip-text l">
+                  <p>Club Name: AQB</p>
+                  <p>Meeting Details: Being loud and doing trivia</p>
+                  <a href = "/attend/date/N326/email"><button type="button" class="btn attend-button">Attend</button></a>
+                </span>
+              </li>
+              
+              <li class="list-group-item">
+                Model Congress <button type="button" class="btn room-button" >N305</button>
+                <span class="tooltip-text l">
+                  <p>Club Name: Model Congress</p>
+                  <p>Meeting Details: Making fake laws</p>
+                  <a href = "/attend/date/N301/email"><button type="button" class="btn attend-button">Attend</button></a>
+                </span>
+              </li>
+
+              
+            
+            
+            
+            
+            <li class="list-group-item">Math Team <button type="button" class="btn room-button" >N312</button></li>
+            <li class="list-group-item">Classics Club <button type="button" class="btn room-button"">N313</button></li>
+            <li class="list-group-item">French Club <button type="button" class="btn room-button"  >N327</button></li>
+            <li class="list-group-item">Irish Affairs Club <button type="button" class="btn room-button">N329</button></li>
+            <li class="list-group-item">AAA-SA <button type="button" class="btn room-button"  >N330</button></li>
+            <li class="list-group-item">Music Club <button type="button" class="btn room-button" >U202</button></li>
+            <li class="list-group-item">Girls Who Code <button type="button" class="btn room-button" >U214</button></li>
+            
+          
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="float-grid">
+    <div class="grid">
+      <div class="booking-card booked">
+        <strong>N323</strong>
+        <p>Math Team</p>
+
+        <span class="tooltip-text">
+          <p>Club Name: Math Teams</p>
+          <p>Meeting Details: Memorizing digits of pi</p>
+          <a href = "/attend/date/N301/email"><button type="button" class="btn attend-button">Attend</button></a>
+        </span>
+
+      </div>
+      <div class="booking-card available">
+        <strong>N325</strong>
+      </div>
+      <div class="booking-card available">
+        <strong>N326</strong>
+      </div>
+      <div class="booking-card empty">
+        <strong></strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N327</strong>
+        <p>Model Congress</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N329</strong>
+      </div>
+      <!-- NEW ROW -->
+      <div class="booking-card available">
+        <strong>N302</strong>
+      </div>
+      <div class="booking-card available">
+        <strong>N304</strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N306</strong>
+        <p>Girls Who Code</p>
+        <span class="tooltip-text">
+          <p>Club Name: Girls Who Code</p>
+          <p>Meeting Details: Trying our best to be women in STEM</p>
+          <a href = "/attend/date/N301/email"><button type="button" class="btn attend-button">Attend</button></a>
+        </span>
+      </div>
+      <div class="booking-card empty">
+        <strong> </strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N312</strong>
+        <p>AQB</p>
+
+        <span class="tooltip-text">
+          <p>Club Name: AQB</p>
+          <p>Meeting Details: Being loud and trivia</p>
+          <a href = "/attend/date/N301/email"><button type="button" class="btn attend-button">Attend</button></a>
+        </span>
+      </div>
+      <div class="booking-card booked">
+        <strong>N314</strong>
+        <p>Classics Club</p>
+      </div>
+      <!-- NEW ROW -->
+      <div class="booking-card available">
+        <strong>N301</strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N303</strong>
+        <p>AAA-SA</p>
+      </div>
+      <div class="booking-card available">
+        <strong>N305</strong>
+      </div>
+      <div class="booking-card available">
+        <strong> N311</strong>
+      </div>
+      <div class="booking-card booked">
+        <strong>N313</strong>
+        <p>Ethics Bowl</p>
+      </div>
+      <div class="booking-card booked">
+        <strong>N314</strong>
+        <p>Irish Affairs Club</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+  
+<%- include('../partials/footer') -%>
