@@ -5,12 +5,14 @@ from flask import jsonify
 import os
 import sys
 
+from db_server.controllers import ClubsController, clubLeadersController
+
 fpath = os.path.join(os.path.dirname(__file__), 'controllers')
 sys.path.append(fpath)
 fpath = os.path.join(os.path.dirname(__file__), 'models')
 sys.path.append(fpath)
 
-from controllers import UsersController, GamesController, ScorecardsController
+from controllers import UsersController
 
 app = Flask(__name__, static_url_path='', static_folder='static')
 
@@ -36,16 +38,16 @@ app.add_url_rule('/users/games/<user_name>', view_func=UsersController.get_user_
 
 
 # #games
-app.add_url_rule('/games', view_func=GamesController.c_rGames, methods = ["GET", "POST"])
-app.add_url_rule('/games/<game_name>', view_func=GamesController.rGame_u_d, methods = ["GET", "PUT", "DELETE"])
-app.add_url_rule('/games/scorecards/<game_name>', view_func=GamesController.get_game_scs)
+app.add_url_rule('/games', view_func=ClubsController.c_rGames, methods = ["GET", "POST"])
+app.add_url_rule('/games/<game_name>', view_func=ClubsController.rGame_u_d, methods = ["GET", "PUT", "DELETE"])
+app.add_url_rule('/games/scorecards/<game_name>', view_func=ClubsController.get_game_scs)
 
 # #scorecards
-app.add_url_rule('/scores', view_func=ScorecardsController.getScores)
-app.add_url_rule('/scores/<username>', view_func=ScorecardsController.getUserScores)
-app.add_url_rule('/scorecards', view_func=ScorecardsController.c_rScorecards, methods = ["GET", "POST"])
-app.add_url_rule('/scorecards/<scorecard_id>', view_func=ScorecardsController.rScorecard_u_d, methods = ["GET", "PUT", "DELETE"])
-app.add_url_rule('/scorecards/game/<scorecard_id>', view_func=ScorecardsController.getGameScorecard)
+app.add_url_rule('/scores', view_func=clubLeadersController.getScores)
+app.add_url_rule('/scores/<username>', view_func=clubLeadersController.getUserScores)
+app.add_url_rule('/scorecards', view_func=clubLeadersController.c_rScorecards, methods = ["GET", "POST"])
+app.add_url_rule('/scorecards/<scorecard_id>', view_func=clubLeadersController.rScorecard_u_d, methods = ["GET", "PUT", "DELETE"])
+app.add_url_rule('/scorecards/game/<scorecard_id>', view_func=clubLeadersController.getGameScorecard)
 
 
 app.run(debug=True, port=5000)
