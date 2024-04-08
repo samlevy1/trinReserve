@@ -30,6 +30,7 @@
         <span class="tooltip-text">
           <form action="/edit/date/N325/email" method="POST">
 
+<<<<<<< HEAD
             <label for="club">Email:</label>
             <input type="text" id="club" name="club" value = "Math Team" readonly><br><br>
             <label for="details">Password:</label>
@@ -209,6 +210,44 @@
     </div>
   </div>
   
+=======
+  <div class="float-meetings">
+    <div class="row">
+        <div class="col-md-12">
+          <h2>My Clubs</h2>
+          
+          <ul class="list-group">
+            <li class="list-group-item">Math Team <button type="button" class="btn room-button" >Details</button></li>
+            <li class="list-group-item">Classics Club <button type="button" class="btn room-button"">Details</button></li>
+            <li class="list-group-item">French Club <button type="button" class="btn room-button"  >Details</button></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  <div class = "float-grid">
+  <div id="floorContainer">
+    <div id="FirstFloor" style="display: none;">
+      <%- include("Floor1.svg") %>
+    </div>
+    <div id="SecondFloorOld" style="display: none;">
+      <%- include("Floor2Old.svg") %>
+    </div>
+    <div id="SecondFloorNew" style="display: none;">
+      <%- include("Floor2New.svg") %>
+    </div>
+    <div id="ThirdFloorOld" style="display: none;">
+      <%- include("Floor3Old.svg") %>
+    </div>
+    <div id="ThirdFloorNew" style="display: none;">
+      <%- include("Floor3New.svg") %>
+    </div>
+  </div>
+</div>
+</div>
+
+>>>>>>> a8875ade4fb7619258667f1d56a2e9be51a66409
 <%- include('../partials/footer') -%>
 
 
