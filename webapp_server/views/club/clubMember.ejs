@@ -1,6 +1,13 @@
 <%- include('../partials/header', {title:"TrinReserve"}) -%>
-
+<style>
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 </style>
+
+<div class="container clearfix">
   <div class="container">
     <div class="header">
       <h1>TrinReserve</h1>
@@ -76,7 +83,7 @@
         </div>
       </div>
     </div>
-    <%- include('../partials/footer') -%>
+
     <div class = "float-grid">
       
     <div id="floorContainer">
@@ -99,7 +106,9 @@
   </div>
   </div>
 </div>
-
+</div>
+  
+<%- include('../partials/footer') -%>
 
 <script>
   
