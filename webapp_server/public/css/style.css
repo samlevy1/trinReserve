@@ -137,6 +137,9 @@ svg{
 fill: rgb(201, 201, 201);
 }
 
+#floorContainer svg text {
+  fill: black !important;
+}
 
 /* form label, form input, form input[type="submit"] {
 font-size: 20px;
