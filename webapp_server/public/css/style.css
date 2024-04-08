@@ -122,7 +122,9 @@ left: 105%;
 background-color: rgb(153, 234, 154);
 }
 
-
+#floorContainer svg text {
+  fill: black !important;
+}
 
 
 .cancel-button {
