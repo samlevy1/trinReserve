@@ -7,15 +7,15 @@ fpath = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'models')
 sys.path.insert(0,fpath)
 
 from models import UsersModel
-from models import GamesModel
-from models import ScorecardsModel
+from db_server.models import ClubsModel
+from db_server.models import ClubLeadersModels
 
 yahtzee_db_name=f"{os.getcwd()}/models/yahtzeeDB.db"
 
 
 users = UsersModel.User(yahtzee_db_name)
-games = GamesModel.Game(yahtzee_db_name)
-scorecards = ScorecardsModel.Scorecard(yahtzee_db_name)
+games = ClubsModel.Game(yahtzee_db_name)
+scorecards = ClubLeadersModels.Scorecard(yahtzee_db_name)
 
 def c_rScorecards():
     
