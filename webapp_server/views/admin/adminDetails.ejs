@@ -1,77 +1,4 @@
-
-
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TrinReserve</title>
-
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<style>
- 
-  .details-button, .approve-button {
-    border: none;
-  }
-  .details-button {
-    background-color: #D8EAD8;
-  }
-  .approve-button {
-    background-color: #ffbaa1;
-  }
-  .list-group-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .list-group-item .btn {
-    margin-left: 10px;
-  }
-
-  .room-button {
-    background-color: #f9ca3c;
-  }
-
-  .details-button {
-    background-color: #ffbaa1;
-  }
-
-  .header {
-      background-color: #badcff;
-      border: none;
-      border-radius: 0;
-      margin-bottom: 1rem;
-      padding: 0.5rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header2 {
-      background-color: #fff3cd;
-      border: none;
-      border-radius: 0;
-      margin-bottom: 1rem;
-      padding: 0.5rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header select,
-    .header input {
-      margin-left: 0.5rem;
-    }
-</style>
-
-
-
-</head>
-<body>
-
-
-
-
+<%- include('../partials/header', {title:"TrinReserve"}) -%>
   <div class="container">
     <div class="header">
       <h1>TrinReserve</h1>
@@ -90,8 +17,9 @@
     <h3>Room Location </h3>
     <p>N327</p>
 
-    <button type="button" class="btn details-button" data-toggle="popover" title="Meeting Details" data-content="Room: N301">CANCEL MEETING</button>
+    
+    <a href = "/cancel/date/N301"><button type="button" class="btn cancel-button">Cancel</button></a>
     
       </div>
-
+      <%- include('../partials/footer') -%>
 

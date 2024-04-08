@@ -30,6 +30,18 @@ app.get('/', async function(request, response) {
   });
 }); 
 
+app.get('/home/:date', async function(request, response) {
+  console.log(request.method, request.url) //event logging
+
+
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("club/clubMember",{
+    feedback:"",
+    username:""
+  });
+}); 
+
 //GET login page
 app.get('/loginPage', async function(request, response) {
   console.log(request.method, request.url) //event logging
@@ -61,8 +73,41 @@ app.get('/login', async function(request, response) {
     
 });
 
+//GET/POST attend meeting
+app.get('/attend/:date/:room/:email', async function(request, response) {
+  console.log(request.method, request.url,request.params) //event logging
+
+  let date = request.params.date;
+  let room = request.params.room;
+  let email = request.params.email;
+  console.log("ATTEND")
+  console.log(date,room,email)
+
+
+  // const url = 'http://127.0.0.1:5000/users'
+  // const headers = {
+  //     "Content-Type": "application/json",
+  // }
+  // let res = await fetch(url, {
+  //     method: "POST",
+  //     headers: headers,
+  //     body: JSON.stringify(request.body),
+  // });
+
+  // let posted_user = await res.text();
+  // let details = JSON.parse(posted_user);
+  // console.log("Returned user:", details)
+
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("club/clubMember", {
+      feedback:""
+  });
+ 
+});
+
 //GET leader page
-app.get('/leaderPage', async function(request, response) {
+app.get('/leaderPage/:email/:date', async function(request, response) {
   console.log(request.method, request.url) //event logging
 
   response.status(200);
@@ -72,6 +117,102 @@ app.get('/leaderPage', async function(request, response) {
     username:""
   });
 });
+
+app.post('/reserve/:date/:room/:email', async function(request, response) {
+  console.log(request.method, request.url,request.params) //event logging
+  console.log(request.body)
+  let date = request.params.date;
+  let room = request.params.room;
+  let email = request.params.email;
+  console.log("RESERVE")
+  console.log(date,room,email)
+
+
+  // const url = 'http://127.0.0.1:5000/users'
+  // const headers = {
+  //     "Content-Type": "application/json",
+  // }
+  // let res = await fetch(url, {
+  //     method: "POST",
+  //     headers: headers,
+  //     body: JSON.stringify(request.body),
+  // });
+
+  // let posted_user = await res.text();
+  // let details = JSON.parse(posted_user);
+  // console.log("Returned user:", details)
+
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("club/clubLeader", {
+      feedback:""
+  });
+ 
+}); //POST /user
+
+app.get('/cancel/:date/:room/:email', async function(request, response) {
+  console.log(request.method, request.url,request.params) //event logging
+
+  let date = request.params.date;
+  let room = request.params.room;
+  let email = request.params.email;
+  console.log("CANCEL")
+  console.log(date,room,email)
+
+
+  // const url = 'http://127.0.0.1:5000/users'
+  // const headers = {
+  //     "Content-Type": "application/json",
+  // }
+  // let res = await fetch(url, {
+  //     method: "POST",
+  //     headers: headers,
+  //     body: JSON.stringify(request.body),
+  // });
+
+  // let posted_user = await res.text();
+  // let details = JSON.parse(posted_user);
+  // console.log("Returned user:", details)
+
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("club/clubLeader", {
+      feedback:""
+  });
+ 
+}); //POST /user
+
+app.post('/edit/:date/:room/:email', async function(request, response) {
+  console.log(request.method, request.url,request.params) //event logging
+  console.log(request.body)
+  let date = request.params.date;
+  let room = request.params.room;
+  let email = request.params.email;
+  console.log("EDIT")
+  console.log(date,room,email)
+
+
+  // const url = 'http://127.0.0.1:5000/users'
+  // const headers = {
+  //     "Content-Type": "application/json",
+  // }
+  // let res = await fetch(url, {
+  //     method: "POST",
+  //     headers: headers,
+  //     body: JSON.stringify(request.body),
+  // });
+
+  // let posted_user = await res.text();
+  // let details = JSON.parse(posted_user);
+  // console.log("Returned user:", details)
+
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("club/clubLeader", {
+      feedback:""
+  });
+ 
+}); //POST /user
 
 //GET admin page
 app.get('/adminPage', async function(request, response) {
@@ -85,6 +226,50 @@ app.get('/adminPage', async function(request, response) {
   });
 });
 
+//GET admin approve page
+app.get('/adminApprove', async function(request, response) {
+  console.log(request.method, request.url) //event logging
+
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("admin/adminApprove",{
+    feedback:""
+  });
+});
+
+app.get('/approve/:date/:room/:club', async function(request, response) {
+  console.log(request.method, request.url,request.params) //event logging
+  console.log(request.body)
+  let date = request.params.date;
+  let room = request.params.room;
+  let email = request.params.email;
+  console.log("APPROVE")
+  console.log(date,room,email)
+
+
+  // const url = 'http://127.0.0.1:5000/users'
+  // const headers = {
+  //     "Content-Type": "application/json",
+  // }
+  // let res = await fetch(url, {
+  //     method: "POST",
+  //     headers: headers,
+  //     body: JSON.stringify(request.body),
+  // });
+
+  // let posted_user = await res.text();
+  // let details = JSON.parse(posted_user);
+  // console.log("Returned user:", details)
+
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("admin/admin", {
+      feedback:""
+  });
+ 
+});
+
+//GET admin details page
 app.get('/adminDetails', async function(request, response) {
   console.log(request.method, request.url) //event logging
 
@@ -96,49 +281,69 @@ app.get('/adminDetails', async function(request, response) {
   });
 });
 
-app.get('/adminApprove', async function(request, response) {
-  console.log(request.method, request.url) //event logging
+app.get('/cancel/:date/:room', async function(request, response) {
+  console.log(request.method, request.url,request.params) //event logging
+  console.log(request.body)
+  let date = request.params.date;
+  let room = request.params.room;
+  let email = request.params.email;
+  console.log("ADMIN CANCEL")
+  console.log(date,room,email)
+
+
+  // const url = 'http://127.0.0.1:5000/users'
+  // const headers = {
+  //     "Content-Type": "application/json",
+  // }
+  // let res = await fetch(url, {
+  //     method: "POST",
+  //     headers: headers,
+  //     body: JSON.stringify(request.body),
+  // });
+
+  // let posted_user = await res.text();
+  // let details = JSON.parse(posted_user);
+  // console.log("Returned user:", details)
 
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
-  response.render("admin/adminApprove",{
-    feedback:"",
-    username:""
+  response.render("admin/admin", {
+      feedback:""
   });
-});
-
-// app.post('/user', async function(request, response) {
-//   console.log(request.method, request.url) //event logging
-
-//   //Get user information from body of POST request
-//   let username = request.body.username;
-//   let email = request.body.email;
-//   let password = request.body.password;
-//   // HEADs UP: You really need to validate this information!
-//   console.log("Info recieved:", username, email, password)
-
-//   const url = 'http://127.0.0.1:5000/users'
-//   const headers = {
-//       "Content-Type": "application/json",
-//   }
-//   let res = await fetch(url, {
-//       method: "POST",
-//       headers: headers,
-//       body: JSON.stringify(request.body),
-//   });
-
-//   let posted_user = await res.text();
-//   let details = JSON.parse(posted_user);
-//   console.log("Returned user:", details)
-
-//   response.status(200);
-//   response.setHeader('Content-Type', 'text/html')
-//   response.render("game/game_details", {
-//       feedback:"",
-//       username: username
-//   });
  
-// }); //POST /user
+}); //POST /user
+
+app.post('/submit', async function(request, response) {
+  console.log(request.method, request.url,request.params) //event logging
+  console.log(request.body)
+  let date = request.params.date;
+  let room = request.params.room;
+  let email = request.params.email;
+  console.log("SUBMIT CLUBS")
+  console.log(date,room,email)
+
+
+  // const url = 'http://127.0.0.1:5000/users'
+  // const headers = {
+  //     "Content-Type": "application/json",
+  // }
+  // let res = await fetch(url, {
+  //     method: "POST",
+  //     headers: headers,
+  //     body: JSON.stringify(request.body),
+  // });
+
+  // let posted_user = await res.text();
+  // let details = JSON.parse(posted_user);
+  // console.log("Returned user:", details)
+
+  response.status(200);
+  response.setHeader('Content-Type', 'text/html')
+  response.render("admin/admin", {
+      feedback:""
+  });
+ 
+}); //POST /user
 
 // Because routes/middleware are applied in order,
 // this will act as a default error route in case of

@@ -39,21 +39,22 @@
       <div class = "addClubLeader">
         <h3>Add Club Leaders</h3>
 
-        <form action="/action_page.php">
+        <form action="/submit" method = "POST">
           <h4>CSV Upload</h4>
-          <input type="file" id="myFile" name="filename">
-          <button type="button" class="btn details-button" >Submit</button>
+          <!-- <label for="file">File:</label> -->
+          <input type="file" id="file" name="file">
+          <button type="submit" class="btn details-button" >Submit</button>
         </form>
         <br>
         
-        <form action="/action_page.php">
+        <form action="/submit" method = "POST">
           <h4>Manual Upload</h4>
-          <label for="fname">Email:</label>
-          <input type="text" id="fname" name="fname"><br>
-          <label for="fname">Club Names:</label>
-          <input type="text" id="fname" name="fname"><br>
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email"><br>
+          <label for="clubs">Club Names:</label>
+          <input type="text" id="clubs" name="clubs"><br>
 
-          <button type="button" class="btn details-button" >Submit</button>
+          <button type="submit" class="btn details-button" >Submit</button>
         </form>
       </div>
       <br><br>

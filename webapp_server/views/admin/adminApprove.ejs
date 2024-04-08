@@ -1,69 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TrinReserve Layout</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    
-    .booking-card {
-      margin: 0.5rem;
-      padding: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-    .booked {
-      background-color: #f8d7da;
-    }
-    .pending {
-      background-color: #fff3cd;
-    }
-    .available {
-      background-color: #d4edda;
-    }
-    .empty {
-      background-color: white;
-      border: 0px;
-    }
-    .header {
-      background-color: #badcff;
-      border: none;
-      border-radius: 0;
-      margin-bottom: 1rem;
-      padding: 0.5rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header2 {
-      background-color: #fff3cd;
-      border: none;
-      border-radius: 0;
-      margin-bottom: 1rem;
-      padding: 0.5rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header select,
-    .header input {
-      margin-left: 0.5rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      grid-gap: 1rem;
-    }
-
-    .details-button {
-    background-color: #D8EAD8;
-  }
-  </style>
-</head>
-<body>
+<%- include('../partials/header', {title:"TrinReserve"}) -%>
   <div class="container">
     <div class="header">
       <h1>TrinReserve</h1>
@@ -82,12 +17,9 @@
     <h3>Room Requested </h3>
     <p>N327</p>
 
-    <button type="button" class="btn details-button" data-toggle="popover" title="Meeting Details" data-content="Room: N301">APPROVE MEETING</button>
+    <a href = "/approve/date/N301/club"><button type="button" class="btn approve-button">Approve</button></a>
+    
     
       </div>
   
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+      <%- include('../partials/footer') -%>

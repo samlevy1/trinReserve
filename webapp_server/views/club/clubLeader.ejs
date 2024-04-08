@@ -27,15 +27,37 @@
         <strong>N323</strong>
         <p>BOOKED</p>
         <p>Math Team</p>
+        <span class="tooltip-text">
+          <form action="/edit/date/N325/email" method="POST">
+
+            <label for="club">Email:</label>
+            <input type="text" id="club" name="club" value = "Math Team" readonly><br><br>
+            <label for="details">Password:</label>
+            <textarea type="text" id="details" name="details"> Calculating digits of pi</textarea> 
+
+
+            <button type="submit" class="btn details-button">Edit</button>
+            <a href = "/cancel/date/N301/email"><button type="button" class="btn cancel-button">Cancel</button></a>
+         
+          </form>
+                    
+          
+        </span>
       </div>
       <div class="booking-card available" id = "N325">
         <span class="tooltip-text">
-          <h10>Club Name:</h10>
-          <input type="text" id="N325ClubName" placeholder = "Classics Club"  />
-          <h10>Meeting Details:</h10>
-          <textarea type="text" id="N325MeetingDetails" placeholder = "Scanning Competition"></textarea>
-          <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N325">Reserve</button>
-          
+          <form action="/reserve/date/N325/email" method="POST">
+
+            <label for="club">Club Name:</label>
+            <input type="text" name="club" placeholder = "Classics Club" />
+
+            <label for="N325Details">Meeting Details:</label>
+            <textarea type="text" id="N325Details" name="N325Details" placeholder = "Scanning Competition"></textarea>
+
+            <button type="submit" class="btn details-button">Reserve</button>
+         
+          </form>
+        
         </span>
         <strong>N325</strong>
         <br></br>
@@ -45,11 +67,19 @@
       </div>
       <div class="booking-card available">
         <span class="tooltip-text">
-          <h10>Club Name:</h10>
-          <input type="text" id="N325ClubName" placeholder = "Girls Who Code"  />
-          <h10>Meeting Details:</h10>
-          <textarea type="text" id="N325MeetingDetails" placeholder = "Trying our best to be women in STEM"></textarea>
-          <button type="button" class="btn details-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Reserve</button>
+          <form action="/reserve/date/N325/email" method="POST">
+
+            <label for="club">Club Name:</label>
+            <input type="text" name="club" placeholder = "Girls Who Code" />
+
+            <label for="N325Details">Meeting Details:</label>
+            <textarea type="text" id="N325Details" name="N325Details" placeholder = "Trying our best to be women in STEM"></textarea>
+
+            <button type="submit" class="btn details-button">Reserve</button>
+         
+          </form>
+
+          
         </span>
         <strong>N326</strong>
         <br></br>
@@ -103,9 +133,20 @@
         <p>BOOKED</p>
         <p>Trinity Times</p>
         <span class="tooltip-text">
-          <p>Club Name: Trinity Times</p>
-          <p>Meeting Details: Working on the paper</p>
-          <button type="button" class="btn cancel-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Cancel</button>
+          <form action="/edit/date/N325/email" method="POST">
+
+            <label for="club">Club Name:</label>
+            <input type="text" name="club" value = "Trinity Times" readonly/>
+
+            <label for="N325Details">Meeting Details:</label>
+            <textarea type="text" id="N325Details" name="N325Details"> Working on the paper</textarea>
+
+            <button type="submit" class="btn details-button">Edit</button>
+            <a href = "/cancel/date/N301/email"><button type="button" class="btn cancel-button">Cancel</button></a>
+         
+          </form>
+
+        
         </span>
       </div>
 
@@ -129,9 +170,18 @@
         <p>BOOKED</p>
         <p>AAA-SA</p>
         <span class="tooltip-text">
-          <p>Club Name: AAA-SA</p>
-          <p>Meeting Details: Talking about stuff</p>
-          <button type="button" class="btn cancel-button" data-toggle="popover" title="Reserve" data-content="Room: N326">Cancel</button>
+          <form action="/edit/date/N303/email" method="POST">
+            <label for="club">Club Name:</label>
+            <input type="text" name="club" value = "AAA-SA" readonly/>
+
+            <label for="N325Details">Meeting Details:</label>
+            <textarea type="text" id="N325Details" name="N325Details"> Talking about stuff</textarea>
+
+            <button type="submit" class="btn details-button">Edit</button>
+            <a href = "/cancel/date/N301/email"><button type="button" class="btn cancel-button">Cancel</button></a>
+         
+          </form>
+         
         </span>
       </div>
       <div class="booking-card pending">
