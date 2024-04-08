@@ -30,12 +30,12 @@
   
 
 <!-- N-310 -->
-  <path class = "room" id="N-310" d="M 550,100 L 650,100 L 650,200 L 550,200 Z" stroke="black" fill="white" />
+  <path class = "space" id="N-310" d="M 550,100 L 650,100 L 650,200 L 550,200 Z" stroke="black" fill="white" />
   <text x="575" y="155" font-family="Verdana" font-size="12">N-310</text>
   <text x="560" y="175" font-family="Verdana" font-size="12">History Office</text>
 
 <!-- N-308 -->
-  <path class = "room" id="N-308" d="M 650,100 L 750,100 L 750,200 L 650,200 Z" stroke="black" fill="white" />
+  <path class = "space" id="N-308" d="M 650,100 L 750,100 L 750,200 L 650,200 Z" stroke="black" fill="white" />
   <text x="675" y="155" font-family="Verdana" font-size="12">N-308</text>
     <text x="660" y="175" font-family="Verdana" font-size="12">English Office</text>
 

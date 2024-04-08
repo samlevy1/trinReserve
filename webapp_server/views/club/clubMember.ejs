@@ -6,10 +6,12 @@
     </div>
 
     <div class="header">
-        <select class="form-control">
-          <option>Third Floor</option>
-          <option>Second Floor</option>
-          <option>First Floor</option>
+        <select id = "floorSelect" class="form-control">
+          <option value="FirstFloor">First Floor</option>
+          <option value="SecondFloorOld">Second Floor Old Building</option>
+          <option value="SecondFloorNew">Second Floor New Building</option>
+          <option value="ThirdFloorOld">Third Floor Old Building</option>
+          <option value="ThirdFloorNew">Third Floor New Building</option>
         </select>
         <select class="form-control">
             <option>3/4/24</option>
@@ -59,10 +61,6 @@
               </li>
 
               
-            
-            
-            
-            
             <li class="list-group-item">Math Team <button type="button" class="btn room-button" >N312</button></li>
             <li class="list-group-item">Classics Club <button type="button" class="btn room-button"">N313</button></li>
             <li class="list-group-item">French Club <button type="button" class="btn room-button"  >N327</button></li>
@@ -78,93 +76,48 @@
       </div>
     </div>
 
-    <div class="float-grid">
-    <div class="grid">
-      <div class="booking-card booked">
-        <strong>N323</strong>
-        <p>Math Team</p>
-
-        <span class="tooltip-text">
-          <p>Club Name: Math Teams</p>
-          <p>Meeting Details: Memorizing digits of pi</p>
-          <a href = "/attend/date/N301/email"><button type="button" class="btn attend-button">Attend</button></a>
-        </span>
-
+    <div class = "float-grid">
+    <div id="floorContainer">
+      <div id="FirstFloor" style="display: none;">
+        <%- include("Floor1.svg") %>
       </div>
-      <div class="booking-card available">
-        <strong>N325</strong>
+      <div id="SecondFloorOld" style="display: none;">
+        <%- include("Floor2Old.svg") %>
       </div>
-      <div class="booking-card available">
-        <strong>N326</strong>
+      <div id="SecondFloorNew" style="display: none;">
+        <%- include("Floor2New.svg") %>
       </div>
-      <div class="booking-card empty">
-        <strong></strong>
+      <div id="ThirdFloorOld" style="display: none;">
+        <%- include("Floor3Old.svg") %>
       </div>
-      <div class="booking-card booked">
-        <strong>N327</strong>
-        <p>Model Congress</p>
-      </div>
-      <div class="booking-card available">
-        <strong>N329</strong>
-      </div>
-      <!-- NEW ROW -->
-      <div class="booking-card available">
-        <strong>N302</strong>
-      </div>
-      <div class="booking-card available">
-        <strong>N304</strong>
-      </div>
-      <div class="booking-card booked">
-        <strong>N306</strong>
-        <p>Girls Who Code</p>
-        <span class="tooltip-text">
-          <p>Club Name: Girls Who Code</p>
-          <p>Meeting Details: Trying our best to be women in STEM</p>
-          <a href = "/attend/date/N301/email"><button type="button" class="btn attend-button">Attend</button></a>
-        </span>
-      </div>
-      <div class="booking-card empty">
-        <strong> </strong>
-      </div>
-      <div class="booking-card booked">
-        <strong>N312</strong>
-        <p>AQB</p>
-
-        <span class="tooltip-text">
-          <p>Club Name: AQB</p>
-          <p>Meeting Details: Being loud and trivia</p>
-          <a href = "/attend/date/N301/email"><button type="button" class="btn attend-button">Attend</button></a>
-        </span>
-      </div>
-      <div class="booking-card booked">
-        <strong>N314</strong>
-        <p>Classics Club</p>
-      </div>
-      <!-- NEW ROW -->
-      <div class="booking-card available">
-        <strong>N301</strong>
-      </div>
-      <div class="booking-card booked">
-        <strong>N303</strong>
-        <p>AAA-SA</p>
-      </div>
-      <div class="booking-card available">
-        <strong>N305</strong>
-      </div>
-      <div class="booking-card available">
-        <strong> N311</strong>
-      </div>
-      <div class="booking-card booked">
-        <strong>N313</strong>
-        <p>Ethics Bowl</p>
-      </div>
-      <div class="booking-card booked">
-        <strong>N314</strong>
-        <p>Irish Affairs Club</p>
+      <div id="ThirdFloorNew" style="display: none;">
+        <%- include("Floor3New.svg") %>
       </div>
     </div>
-    </div>
+  </div>
   </div>
 </div>
   
 <%- include('../partials/footer') -%>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var floorSelect = document.getElementById('floorSelect');
+
+    function showFloor(selectedFloor) {
+      // Hide all floors first
+      ['FirstFloor', 'SecondFloorOld', 'SecondFloorNew', 'ThirdFloorOld', 'ThirdFloorNew'].forEach(function(floor) {
+        document.getElementById(floor).style.display = 'none';
+      });
+      // Then show the selected floor
+      document.getElementById(selectedFloor).style.display = 'block';
+    }
+
+    // Initialize with the first floor showing, or adjust based on your requirements
+    showFloor('FirstFloor');
+
+    floorSelect.addEventListener('change', function() {
+      showFloor(this.value);
+    });
+  });
+</script>
