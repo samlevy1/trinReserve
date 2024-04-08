@@ -76,26 +76,32 @@
         </div>
       </div>
     </div>
-    <%- include('../partials/footer') -%>
+    
     <div class = "float-grid">
+      <div class = "row">
+        <div id="floorContainer">
+          <div id="FirstFloor" style="display: none;">
+            <%- include("Floor1.svg") %>
+          </div>
+          <div id="SecondFloorOld" style="display: none;">
+            <%- include("Floor2Old.svg") %>
+          </div>
+          <div id="SecondFloorNew" style="display: none;">
+            <%- include("Floor2New.svg") %>
+          </div>
+          <div id="ThirdFloorOld" style="display: none;">
+            <%- include("Floor3Old.svg") %>
+          </div>
+          <div id="ThirdFloorNew" style="display: none;">
+            <%- include("Floor3New.svg") %>
+          </div>
+        </div>
+      </div>
       
-    <div id="floorContainer">
-      <div id="FirstFloor" style="display: none;">
-        <%- include("Floor1.svg") %>
+      <div class = "row">
+        <%- include('../partials/footer') -%>
       </div>
-      <div id="SecondFloorOld" style="display: none;">
-        <%- include("Floor2Old.svg") %>
-      </div>
-      <div id="SecondFloorNew" style="display: none;">
-        <%- include("Floor2New.svg") %>
-      </div>
-      <div id="ThirdFloorOld" style="display: none;">
-        <%- include("Floor3Old.svg") %>
-      </div>
-      <div id="ThirdFloorNew" style="display: none;">
-        <%- include("Floor3New.svg") %>
-      </div>
-    </div>
+    
   </div>
   </div>
 </div>
@@ -123,3 +129,5 @@
     });
   });
 </script>
+
+
