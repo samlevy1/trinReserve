@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1200 1000">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="100 200 1200 1000">
   <style>
     .room:hover { fill: #c0f0b1; }
     .space:hover { fill: #fa9c8c; }
