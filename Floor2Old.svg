@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">
+  
+    <style>
+    .room:hover { fill: #c0f0b1; }
+    .space:hover { fill: #fa9c8c; }
+    /* Additional styles for hover effects would go here */
+  </style>
+
+<!-- FIRST ROW:  -->
+  <!-- First room U-206 Classroom -->
+  <path class = "room" id="U-206" d="M 0,0 L 100,0 L 100,100 L 0,100 Z" stroke="black" fill="white" />
+  <text x="50" y="40" font-family="Verdana" font-size="12" text-anchor="middle">U-206</text>
+  <text x="50" y="55" font-family="Verdana" font-size="12" text-anchor="middle">Classroom</text>
+
+  <!-- Second room U-207 Classroom -->
+  <path class = "room" id="U-207" d="M 100,0 L 200,0 L 200,100 L 100,100 Z" stroke="black" fill="white" />
+  <text x="150" y="40" font-family="Verdana" font-size="12" text-anchor="middle">U-207</text>
+  <text x="150" y="55" font-family="Verdana" font-size="12" text-anchor="middle">Classroom</text>
+
+  <!-- Third room U-208 Classroom -->
+  <path class = "room" id="U-208" d="M 200,0 L 300,0 L 300,100 L 200,100 Z" stroke="black" fill="white" />
+  <text x="250" y="40" font-family="Verdana" font-size="12" text-anchor="middle">U-208</text>
+  <text x="250" y="55" font-family="Verdana" font-size="12" text-anchor="middle">Classroom</text>
+
+  <!-- Fourth room U-210 Classroom -->
+  <path class = "room" id="U-210" d="M 300,0 L 400,0 L 400,100 L 300,100 Z" stroke="black" fill="white" />
+  <text x="350" y="40" font-family="Verdana" font-size="12" text-anchor="middle">U-210</text>
+  <text x="350" y="55" font-family="Verdana" font-size="12" text-anchor="middle">Classroom</text>
+
+  <!-- Fifth room on top U-213A Prep Room -->
+  <path class = "space" id="U-213A" d="M 400,0 L 450,0 L 450,50 L 400,50 Z" stroke="black" fill="white" />
+  <text x="425" y="20" font-family="Verdana" font-size="12" text-anchor="middle">U-213A</text>
+  <text x="425" y="35" font-family="Verdana" font-size="12" text-anchor="middle">Room</text>
+
+  <!-- Sixth room on bottom U-212 -->
+  <path class = "space" id="U-212" d="M 400,50 L 450,50 L 450,100 L 400,100 Z" stroke="black" fill="white" />
+  <text x="425" y="75" font-family="Verdana" font-size="12" text-anchor="middle">U-212</text>
+
+  <!-- Seventh room U-213 Physics Lab -->
+  <path class = "room" id="U-213" d="M 450,0 L 600,0 L 600,100 L 450,100 Z" stroke="black" fill="white" />
+  <text x="525" y="40" font-family="Verdana" font-size="12" text-anchor="middle">U-213</text>
+  <text x="525" y="55" font-family="Verdana" font-size="12" text-anchor="middle">Physics Lab</text>
+
+  <!-- RIGHT COLUMN -->
+  <!-- Room U-214 Computer Lab -->
+  <path class = "room" id="U-214" d="M 500,100 L 600,100 L 600,325 L 500,325 Z" stroke="black" fill="white" />
+  <text x="550" y="212.5" font-family="Verdana" font-size="12" text-anchor="middle">U-214</text>
+  <text x="550" y="227.5" font-family="Verdana" font-size="12" text-anchor="middle">Computer Lab</text>
+
+  <!-- Room U-217 Classics Office -->
+  <path class = "space" id="U-217" d="M 500,325 L 600,325 L 600,425 L 500,425 Z" stroke="black" fill="white" />
+  <text x="550" y="362.5" font-family="Verdana" font-size="12" text-anchor="middle">U-217</text>
+  <text x="550" y="377.5" font-family="Verdana" font-size="12" text-anchor="middle">Classics Office</text>
+
+  <!-- Room U-219 Classroom -->
+  <path class = "room" id="U-219" d="M 500,425 L 600,425 L 600,525 L 500,525 Z" stroke="black" fill="white" />
+  <text x="550" y="462.5" font-family="Verdana" font-size="12" text-anchor="middle">U-219</text>
+  <text x="550" y="477.5" font-family="Verdana" font-size="12" text-anchor="middle">Classroom</text>
+
+  <!-- Room U-220 Classroom -->
+  <path class = "room" id="U-220" d="M 500,525 L 600,525 L 600,625 L 500,625 Z" stroke="black" fill="white" />
+  <text x="550" y="562.5" font-family="Verdana" font-size="12" text-anchor="middle">U-220</text>
+  <text x="550" y="577.5" font-family="Verdana" font-size="12" text-anchor="middle">Classroom</text>
+
+  <!-- Room U-221 Classroom -->
+  <path class = "room" id="U-221" d="M 500,625 L 600,625 L 600,725 L 500,725 Z" stroke="black" fill="white" />
+  <text x="550" y="662.5" font-family="Verdana" font-size="12" text-anchor="middle">U-221</text>
+  <text x="550" y="677.5" font-family="Verdana" font-size="12" text-anchor="middle">Classroom</text>
+
+  <!-- Room U-222 Classroom -->
+  <path class = "room" id="U-222" d="M 500,725 L 600,725 L 600,825 L 500,825 Z" stroke="black" fill="white" />
+  <text x="550" y="762.5" font-family="Verdana" font-size="12" text-anchor="middle">U-222</text>
+  <text x="550" y="777.5" font-family="Verdana" font-size="12" text-anchor="middle">Classroom</text>
+
+  <!-- LEFT COLUMN -->
+<!-- First two rooms with height 50 each -->
+  <!-- Room U-205 Storage -->
+  <path class = "empty" id="U-205" d="M 0,165 L 100,165 L 100,215 L 0,215 Z" stroke="black" fill="white" />
+  <text x="50" y="190" font-family="Verdana" font-size="12" text-anchor="middle">U-205 Storage</text>
+
+  <!-- Room U-204 Dean -->
+  <path class = "space" id="U-204" d="M 0,215 L 100,215 L 100,265 L 0,265 Z" stroke="black" fill="white" />
+  <text x="50" y="240" font-family="Verdana" font-size="12" text-anchor="middle">U-204 Dean</text>
+
+  <!-- Room U-202 Classroom -->
+  <path class = "room" id="U-202" d="M 0,265 L 100,265 L 100,365 L 0,365 Z" stroke="black" fill="white" />
+  <text x="50" y="305" font-family="Verdana" font-size="12" text-anchor="middle">U-202</text>
+  <text x="50" y="320" font-family="Verdana" font-size="12" text-anchor="middle">Classroom</text>
+
+  <!-- Room U-201 Dean -->
+  <path class = "space" id="U-201" d="M 0,365 L 100,365 L 100,415 L 0,415 Z" stroke="black" fill="white" />
+  <text x="50" y="390" font-family="Verdana" font-size="12" text-anchor="middle">U-201 Dean</text>
+
+  <!-- Room Bathroom -->
+  <path d="M 0,415 L 100,415 L 100,465 L 0,465 Z" stroke="black" fill="#ddbdfc" />
+  <text x="50" y="440" font-family="Verdana" font-size="12" text-anchor="middle">Bathroom</text>
+
+  <!-- MIDDLE -->
+  <!-- COLUMN 1 -->
+  <!-- Room Stair H-C -->
+  <path d="M 150,165 L 225,165 L 225,215 L 150,215 Z" stroke="black" fill="#acd2e3" />
+  <text x="187.5" y="190" font-family="Verdana" font-size="12" text-anchor="middle">Stair H-C</text>
+
+  <!-- Empty -->
+  <path d="M 150,215 L 225,215 L 225,265 L 150,265 Z" stroke="black" fill="grey" />
+
+    <!-- Room U-203 Classroom -->
+  <path class = "room" id="U-203" d="M 150,265 L 225,265 L 225,365 L 150,365 Z" stroke="black" fill="white" />
+  <text x="187.5" y="305" font-family="Verdana" font-size="12" text-anchor="middle">U-203</text>
+  <text x="187.5" y="320" font-family="Verdana" font-size="12" text-anchor="middle">Classroom</text>
+
+  <!-- Room U-218A Office -->
+  <path class = "space" id="U-218A" d="M 150,415 L 225,415 L 225,365 L 150,365 Z" stroke="black" fill="white" />
+  <text x="187.5" y="390" font-family="Verdana" font-size="12" text-anchor="middle">U-218A</text>
+  <text x="187.5" y="405" font-family="Verdana" font-size="12" text-anchor="middle">Office</text>
+
+  <!-- Room Stair H-B -->
+  <path d="M 150,415 L 225,415 L 225,465 L 150,465 Z" stroke="black" fill="#acd2e3" />
+  <text x="187.5" y="440" font-family="Verdana" font-size="12" text-anchor="middle">Stair H-B</text>
+
+  <!-- COLUMN 3 -->
+<!-- Room Stair H-E -->
+  <path d="M 375,165 L 450,165 L 450,215 L 375,215 Z" stroke="black" fill="#acd2e3" />
+  <text x="412.5" y="190" font-family="Verdana" font-size="12" text-anchor="middle">Stair H-E</text>
+
+  <!-- Room Bathroom -->
+  <path d="M 375,215 L 450,215 L 450,265 L 375,265 Z" stroke="black" fill="#ddbdfc" />
+  <text x="412.5" y="240" font-family="Verdana" font-size="12" text-anchor="middle">Bathroom</text>
+
+  <!-- Room U-215 Classroom -->
+  <path class = "room" id="U-215" d="M 375,265 L 450,265 L 450,365 L 375,365 Z" stroke="black" fill="white" />
+  <text x="412.5" y="305" font-family="Verdana" font-size="12" text-anchor="middle">U-215</text>
+  <text x="412.5" y="320" font-family="Verdana" font-size="12" text-anchor="middle">Classroom</text>
+
+  <!-- Room U-216 Registrar -->
+  <path class = "space" id="U-216" d="M 375,365 L 450,365 L 450,415 L 375,415 Z" stroke="black" fill="white" />
+  <text x="412.5" y="390" font-family="Verdana" font-size="12" text-anchor="middle">U-216</text>
+  <text x="412.5" y="405" font-family="Verdana" font-size="12" text-anchor="middle">Registrar</text>
+
+  <!-- Room Stair H-D -->
+  <path d="M 375,415 L 450,415 L 450,465 L 375,465 Z" stroke="black" fill="#acd2e3" />
+  <text x="412.5" y="440" font-family="Verdana" font-size="12" text-anchor="middle">Stair H-D</text>
+
+  <!-- COLUMN 2 -->
+ <!-- Room U-209 Dean -->
+  <path class = "space" id="U-209" d="M 225,165 L 300,165 L 300,215 L 225,215 Z" stroke="black" fill="white" />
+  <text x="262.5" y="190" font-family="Verdana" font-size="12" text-anchor="middle">U-209 Dean</text>
+
+  <!-- Room U-211 Dean -->
+  <path class = "space" id="U-211" d="M 300,165 L 375,165 L 375,215 L 300,215 Z" stroke="black" fill="white" />
+  <text x="337.5" y="190" font-family="Verdana" font-size="12" text-anchor="middle">U-211 Dean</text>
+
+  <path d="M 225,365 L 375,365 L 375,215 L 225,215 Z" stroke="black" fill="grey" />
+
+  <path class = "space" id="U-218" d="M 225,365 L 375,365 L 375,465 L 225,465 Z" stroke="black" fill="white" />
+  <text x="300" y="400" font-family="Verdana" font-size="12" text-anchor="middle">U-218 Specialist</text>
+  <text x="300" y="415" font-family="Verdana" font-size="12" text-anchor="middle">Office</text>
+
+  <path d="M 150,515 L 450,515 L 450,825 L 150,825 Z" stroke="black" fill="white" />
+  <text x="300" y="627.5" font-family="Verdana" font-size="12" text-anchor="middle">Hawley Chapel</text>
+</svg>
+
+
+
+
+
+
+
+
+
+
