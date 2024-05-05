@@ -1,6 +1,13 @@
 <%- include('../partials/header', {title:"TrinReserve"}) -%>
-
+<style>
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 </style>
+
+<div class="container clearfix">
   <div class="container">
     <div class="header">
       <h1>TrinReserve</h1>
@@ -76,36 +83,31 @@
         </div>
       </div>
     </div>
-    
+  
     <div class = "float-grid">
-      <div class = "row">
-        <div id="floorContainer">
-          <div id="FirstFloor" style="display: none;">
-            <%- include("Floor1.svg") %>
-          </div>
-          <div id="SecondFloorOld" style="display: none;">
-            <%- include("Floor2Old.svg") %>
-          </div>
-          <div id="SecondFloorNew" style="display: none;">
-            <%- include("Floor2New.svg") %>
-          </div>
-          <div id="ThirdFloorOld" style="display: none;">
-            <%- include("Floor3Old.svg") %>
-          </div>
-          <div id="ThirdFloorNew" style="display: none;">
-            <%- include("Floor3New.svg") %>
-          </div>
-        </div>
-      </div>
       
-      <div class = "row">
-        <%- include('../partials/footer') -%>
+    <div id="floorContainer">
+      <div id="FirstFloor" style="display: none;">
+        <%- include("Floor1.svg") %>
       </div>
-    
-  </div>
+      <div id="SecondFloorOld" style="display: none;">
+        <%- include("Floor2Old.svg") %>
+      </div>
+      <div id="SecondFloorNew" style="display: none;">
+        <%- include("Floor2New.svg") %>
+      </div>
+      <div id="ThirdFloorOld" style="display: none;">
+        <%- include("Floor3Old.svg") %>
+      </div>
+      <div id="ThirdFloorNew" style="display: none;">
+        <%- include("Floor3New.svg") %>
+      </div>
+    </div>
   </div>
 </div>
-
+</div>
+  
+<%- include('../partials/footer') -%>
 
 <script>
   
