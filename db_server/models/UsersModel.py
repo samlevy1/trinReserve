@@ -3,6 +3,12 @@ import random
 
 #what to do in exists if username and id
 
+#get all users
+#create new user
+#get a user from id/email
+#updates a single user from id/email
+#deletes a single user from id/email
+
 class User:
     def __init__(self, db_name):
         self.db_name =  db_name
@@ -12,14 +18,16 @@ class User:
 
     
     def initialize_users_table(self):
+        print("initializing")
+        print("UsersModel DB loation", self.table_name)
         db_connection = sqlite3.connect(self.db_name)
         cursor = db_connection.cursor()
         schema=f"""
                 CREATE TABLE {self.table_name} (
                     id INTEGER PRIMARY KEY UNIQUE,
                     email TEXT UNIQUE,
-                    username TEXT UNIQUE,
-                    password TEXT
+                    password TEXT, 
+                    administrator TEXT
                 )
                 """
         cursor.execute(f"DROP TABLE IF EXISTS {self.table_name};")
@@ -34,19 +42,19 @@ class User:
             result = "success"
             user_id = random.randint(0, 9007199254740991) #non-negative range of SQLITE3 INTEGER
 
-            if self.exists(username=user_details["username"])["message"] or self.exists(email=user_details["email"])["message"]:
+            if self.exists(email=user_details["email"])["message"]:
                 result = "error"
-                message = "username or email already exists"
+                message = "email already exists"
 
             # check to see if exists already!!
             while self.exists(id = user_id)["message"]:
                 user_id = random.randint(0, 9007199254740991)
             
-            #username & email checks
+            #email checks
             email = user_details["email"]
-            if user_details["username"].isalnum() == False or "@" not in email or email[len(email)-4] != "." or email[len(email)-3:].isalpha() == False:
+            if "@" not in email or email[len(email)-4] != "." or email[len(email)-3:].isalpha() == False:
                 result = "error"
-                message = "username or email incorrect format"
+                message = "email incorrect format"
 
             
 
@@ -55,16 +63,21 @@ class User:
                 result = "error" 
                 message = "password incorrect format"
 
-            user_data = (user_id, user_details["email"], user_details["username"], user_details["password"])
+            user_data = (user_id, user_details["email"], user_details["password"], user_details["administrator"])
             
+            # print(user_data)
+            # print(self.to_dict(user_data))
+            # cursor.execute(f"INSERT INTO {self.table_name} VALUES (?, ?, ?, ?);", user_data)
             if result != "error":
-                #are you sure you have all data in the correct format?
+                # are you sure you have all data in the correct format?
                 cursor.execute(f"INSERT INTO {self.table_name} VALUES (?, ?, ?, ?);", user_data)
                 db_connection.commit()
+                print(user_data)
                 message = self.to_dict(user_data)
-            
+                
 
-            return {"result": result,
+            return {
+                    "result": result,   
                     "message": message
                     }
      
@@ -76,7 +89,7 @@ class User:
         finally:
             db_connection.close()
     
-    def get_user(self, id = None, username = None):
+    def get_user(self, id = None, email = None):
         try: 
             db_connection = sqlite3.connect(self.db_name)
             cursor = db_connection.cursor()
@@ -88,12 +101,12 @@ class User:
                 else:
                     return {"result":"error",
                             "message":"id doesn't exist"}
-            elif username != None:
-                if self.exists(username=username)["message"]:
-                    query = f"SELECT * from {self.table_name} WHERE {self.table_name}.username = '{username}';"
+            elif email != None:
+                if self.exists(email=email)["message"]:
+                    query = f"SELECT * from {self.table_name} WHERE {self.table_name}.email = '{email}';"
                 else:
                     return {"result":"error",
-                            "message":"username doesn't exist"}
+                            "message":"email doesn't exist"}
                 
             results = cursor.execute(query).fetchall()[0]
            
@@ -140,12 +153,12 @@ class User:
             cursor = db_connection.cursor()
 
 
-            if self.exists(username = user_info["ogUsername"])["message"] == False:
+            if self.exists(email = user_info["email"])["message"] == False:
                 return {"result":"error",
                         "message":"user doesn't exist"}
-            id = self.get_user(username=user_info["ogUsername"])["message"]["id"]
+            id = self.get_user(email=user_info["email"])["message"]["id"]
 
-            query = f"UPDATE {self.table_name} SET email = '{user_info['email']}', username = '{user_info['username']}', password = '{user_info['password']}' WHERE id = {id};"
+            query = f"UPDATE {self.table_name} SET email = '{user_info['email']}', password = '{user_info['password']}', administrator = '{user_info['administrator']}' WHERE id = {id};"
 
             # results = cursor.execute(f"SELECT * FROM {self.table_name} WHERE id = {user_info['id']}").fetchall()
             results = cursor.execute(query)
@@ -163,20 +176,20 @@ class User:
         finally:
             db_connection.close()
 
-    def remove_user(self, name):
+    def remove_user(self, email):
         try: 
             db_connection = sqlite3.connect(self.db_name)
             cursor = db_connection.cursor()
 
-            results = cursor.execute(f"SELECT username FROM {self.table_name}" ).fetchall()
-            if self.exists(username=name)["message"] == False:
+            results = cursor.execute(f"SELECT email FROM {self.table_name}" ).fetchall()
+            if self.exists(email=email)["message"] == False:
                 return {"result":"error",
-                        "message":"username doesn't exist"}
+                        "message":"email doesn't exist"}
         
 
-            user = self.get_user(username = name)
+            user = self.get_user(email = email)
             # print(user)
-            query = f"DELETE FROM {self.table_name} WHERE username = '{name}';"
+            query = f"DELETE FROM {self.table_name} WHERE email = '{email}';"
 
             results = cursor.execute(query)
 
@@ -193,20 +206,13 @@ class User:
         finally:
             db_connection.close()
 
-    def exists(self, username = None, id = None, email = None):
+    def exists(self, id = None, email = None):
         try:
             db_connection = sqlite3.connect(self.db_name)
             cursor = db_connection.cursor()
             exist = False
 
-            if username != None:
-                usernames = cursor.execute(f"SELECT username from {self.table_name} ;").fetchall()
-
-                for u in usernames:
-                    if username == u[0]:
-                        exist = True
-
-            elif id != None:
+            if id != None:
                 ids = cursor.execute(f"SELECT id from {self.table_name} ;").fetchall()
                 for i in ids:
                     # print(id, i[0])
@@ -235,8 +241,8 @@ class User:
     def to_dict(self, user_info):
         dict = {"id": user_info[0],
                 "email": user_info[1],
-                "username": user_info[2],
-                "password": user_info[3]
+                "password": user_info[2],
+                "administrator": user_info[3]
                 }
         
         return dict

@@ -1,10 +1,13 @@
 import os
 
-import UsersModel, db_server.models.ClubsModel as ClubsModel, db_server.models.ClubLeadersModels as ClubLeadersModels
+import UsersModel, ClubsModel, RoomsModel, ClubLeadersModel
+# , db_server.models.ClubsModel as ClubsModel, db_server.models.ClubLeadersModels as ClubLeadersModels
 
 print(os.getcwd())
-yahtzee_db_name=f"{os.getcwd()}/yahtzeeDB.db"
-print(yahtzee_db_name)
-UsersModel.User(yahtzee_db_name).initialize_users_table()
-ClubsModel.Game(yahtzee_db_name).initialize_games_table()
-ClubLeadersModels.Scorecard(yahtzee_db_name).initialize_scorecards_table()
+trinReserve_db_name=f"{os.getcwd()}/trinReserveDB.db"
+print(trinReserve_db_name)
+UsersModel.User(trinReserve_db_name).initialize_users_table()
+ClubsModel.Club(trinReserve_db_name).initialize_clubs_table()
+RoomsModel.Room(trinReserve_db_name).initialize_rooms_table()
+ClubLeadersModel.Leader(trinReserve_db_name).initialize_leaders_table()
+# ClubLeadersModels.Scorecard(yahtzee_db_name).initialize_scorecards_table()

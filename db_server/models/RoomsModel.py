@@ -2,50 +2,43 @@ import sqlite3
 import random
 import datetime
 #what to do in exists if name and id
-class Club:
+class Room:
     def __init__(self, db_name):
         self.db_name =  db_name
-        self.table_name = "clubs"
+        self.table_name = "rooms"
     
-    def initialize_clubs_table(self):
+    def initialize_rooms_table(self):
         db_connection = sqlite3.connect(self.db_name)
         cursor = db_connection.cursor()
         schema=f"""
                 CREATE TABLE {self.table_name} (
-                    id INTEGER PRIMARY KEY UNIQUE,
-                    name TEXT UNIQUE
+                    id TEXT PRIMARY KEY UNIQUE,
+                    seats INTEGER
                 )
                 """
         cursor.execute(f"DROP TABLE IF EXISTS {self.table_name};")
         results=cursor.execute(schema)
         db_connection.close()
     
-    def create_club(self, club_info):
+    def create_room(self, room_info):
         try: 
             db_connection = sqlite3.connect(self.db_name)
             cursor = db_connection.cursor()
-            club_name = club_info["name"]
-            if self.exists(name = club_name)["message"]:
+            room_number = room_info["id"]
+            if self.exists(id = room_number)["message"]:
                 return {
                         "result": "error",
-                        "message": "name already exists"
+                        "message": "room already exists"
                     }
 
-            club_id = random.randint(0, 9007199254740991) #non-negative range of SQLITE3 INTEGER
-            
-            # check to see if exists already!!
-
-            while self.exists(id = club_id)["message"]:
-                club_id = random.randint(0, 9007199254740991)
-
-           
-            club_data = (club_id, club_name)
-            
-            cursor.execute(f"INSERT INTO {self.table_name} VALUES (?, ?);", club_data)
+            room_data = (room_number, room_info["seats"])
+            # print(type(room_data), type(room_data[1]))
+            cursor.execute(f"INSERT INTO {self.table_name} VALUES (?, ?);", room_data)
             db_connection.commit()
         
             return {"result": "success",
-                    "message": self.get_club(name = club_name)["message"]
+                    # "message": "help"
+                    "message": self.get_room(id = room_number)["message"]
                     }
      
         
@@ -56,23 +49,17 @@ class Club:
         finally:
             db_connection.close()
     
-    def get_club(self, id = None, name = None):
+    def get_room(self, id):
         try: 
             db_connection = sqlite3.connect(self.db_name)
             cursor = db_connection.cursor()
 
             if id != None:
                 if self.exists(id = id)["message"]:
-                    query = f"SELECT * from {self.table_name} WHERE {self.table_name}.id = {id};"
+                    query = f"SELECT * from {self.table_name} WHERE {self.table_name}.id = '{id}';"
                 else:
                     return {"result":"error",
                             "message":"id doesn't exist"}
-            elif name != None:
-                if self.exists(name=name)["message"]:
-                    query = f"SELECT * from {self.table_name} WHERE {self.table_name}.name = '{name}';"
-                else:
-                    return {"result":"error",
-                            "message":"name doesn't exist"}
                 
             results = cursor.execute(query).fetchall()[0]
 
@@ -89,22 +76,22 @@ class Club:
         finally:
             db_connection.close()
 
-    def get_clubs(self):
+    def get_rooms(self):
         try: 
             db_connection = sqlite3.connect(self.db_name)
             cursor = db_connection.cursor()
 
-            clubs = []
+            rooms = []
             query = f"SELECT * from {self.table_name};"
 
             results = cursor.execute(query).fetchall()
             print(results)
 
-            for club in results:
-                clubs.append(self.to_dict(club))
+            for room in results:
+                rooms.append(self.to_dict(room))
 
             return {"result": "success",
-                    "message": clubs
+                    "message": rooms
                     }
         
         except sqlite3.Error as error:
@@ -114,24 +101,24 @@ class Club:
         finally:
             db_connection.close()
 
-    def update_club(self, club_info):
+    def update_room(self, room_info):
         try: 
             db_connection = sqlite3.connect(self.db_name)
             cursor = db_connection.cursor()
 
-            if self.exists(id = club_info["id"])["message"] == False:
+            if self.exists(id = room_info["id"])["message"] == False:
                 return {"result":"error",
-                        "message":"club doesn't exist"}
+                        "message":"room doesn't exist"}
             
            
-            query = f"UPDATE {self.table_name} SET name = '{club_info['name']}' WHERE id = {club_info['id']};"
+            query = f"UPDATE {self.table_name} SET seats = '{room_info['seats']}' WHERE id = '{room_info['id']}';"
             
             results = cursor.execute(query)
 
             db_connection.commit()
 
             return {"result": "success",
-                    "message": self.get_club(club_info["id"])["message"]
+                    "message": self.get_room(room_info["id"])["message"]
                     }
         
         except sqlite3.Error as error:
@@ -141,26 +128,26 @@ class Club:
         finally:
             db_connection.close()
 
-    def remove_club(self, name):
+    def remove_room(self, id):
         try: 
             db_connection = sqlite3.connect(self.db_name)
             cursor = db_connection.cursor()
 
-            if self.exists(name=name)["message"] == False:
+            if self.exists(id)["message"] == False:
                 return {"result":"error",
-                        "message":"club doesn't exist"}
+                        "message":"room doesn't exist"}
         
 
-            club = self.get_club(name = name)
+            room = self.get_room(id)
             # print(user)
-            query = f"DELETE FROM {self.table_name} WHERE name = '{name}';"
+            query = f"DELETE FROM {self.table_name} WHERE id = '{id}';"
 
             results = cursor.execute(query)
 
             db_connection.commit()
 
             return {"result": "success",
-                    "message": club["message"]
+                    "message": room["message"]
                     }
         
         except sqlite3.Error as error:
@@ -170,29 +157,17 @@ class Club:
         finally:
             db_connection.close()
 
-    def exists(self, name = None, id = None, link = None):
+    def exists(self, id):
         try:
             db_connection = sqlite3.connect(self.db_name)
             cursor = db_connection.cursor()
             exist = False
 
-            if name != None:
-                names = cursor.execute(f"SELECT name from {self.table_name} ;").fetchall()
-                for n in names:
-                    if name == n[0]:
-                        exist = True
+            ids = cursor.execute(f"SELECT id from {self.table_name} ;").fetchall()
+            for i in ids:
+                if id == i[0]:
+                    exist = True
 
-            elif id != None:
-                ids = cursor.execute(f"SELECT id from {self.table_name} ;").fetchall()
-                for i in ids:
-                    if id == i[0]:
-                        exist = True
-            
-            elif link != None:
-                links = cursor.execute(f"SELECT link from {self.table_name} ;").fetchall()
-                for l in links:
-                    if link == l[0]:
-                        exist = True
             
             return {"result": "success",
                     "message": exist
@@ -207,9 +182,9 @@ class Club:
 
         return exist
     
-    def to_dict(self, club_info):
-        dict = {"id": club_info[0],
-                "name": club_info[1],
+    def to_dict(self, room_info):
+        dict = {"id": room_info[0],
+                "seats": room_info[1],
                 }
 
         

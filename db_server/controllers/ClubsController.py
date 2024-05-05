@@ -7,72 +7,71 @@ fpath = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'models')
 sys.path.insert(0,fpath)
 
 from models import UsersModel
-from db_server.models import ClubsModel
-from db_server.models import ClubLeadersModels
+from models import ClubsModel
+# from db_server.models import ClubsModel
+# from db_server.models import ClubLeadersModels
+# from UsersModel import *
+# from GamesModel import *
+# from ScorecardsModel import *
 
-yahtzee_db_name=f"{os.getcwd()}/models/yahtzeeDB.db"
+trinReserve_db_name=f"{os.getcwd()}/models/trinReserveDB.db"
 
 
-users = UsersModel.User(yahtzee_db_name)
-games = ClubsModel.Game(yahtzee_db_name)
-scorecards = ClubLeadersModels.Scorecard(yahtzee_db_name)
+users = UsersModel.User(trinReserve_db_name)
+clubs = ClubsModel.Club(trinReserve_db_name)
+# scorecards = ClubLeadersModels.Scorecard(yahtzee_db_name)
 
-def c_rGames():
+def c_rClubs():
     
-    # curl "http://127.0.0.1:5000/games"
+    # curl "http://127.0.0.1:5000/clubs"
     if request.method == "GET":
-        response = games.get_games()
+        response = clubs.get_clubs()
         # if response["result"] == "success":
         return jsonify(response["message"])
         # else:
             # return [] 
         
     elif request.method == "POST":
-        #curl -X POST -H "Content-type: application/json" -d '{"name":"testGame","link":"Abcd1234"}' "http://127.0.0.1:5000/games"
+        #curl -X POST -H "Content-type: application/json" -d '{"name":"testclub"}' "http://127.0.0.1:5000/clubs"
         # return jsonify(request.json)
-        response = games.create_game(request.json)
+        response = clubs.create_club(request.json)
         # if response["result"] == "success":
         return jsonify(response["message"])
         # else:
-            # return {}    
-
-def rGame_u_d(game_name):
+            # return {} 
+    
+def rClub_u_d(name_id):
     if request.method == "GET":
-        #  curl "http://127.0.0.1:5000/games/testGame"
-        response = games.get_game(name = game_name)
+        #  curl "http://127.0.0.1:5000/clubs/testclub"
+        print(name_id)
+        response = clubs.get_club(name = name_id)
         if response["result"] == "success":
             return jsonify(response["message"])
         else:
             return {}   
 
     elif request.method == "PUT":
-        #curl -X PUT -H "Content-type: application/json" -d '{"id":6139014500727157862,"name":"ahhhh", "link":"Oand1234", "finished":" 2023-14-25 08:45:06.123837"}' "http://127.0.0.1:5000/games/testGame"
-        
-        response = games.update_game(request.json)
-        if response["result"] == "success":
-            return jsonify(response["message"])
-        else:
-            return {}   
+        #curl -X PUT -H "Content-type: application/json" -d '{"name": "newClub", "id": 6153875186766167 }' "http://127.0.0.1:5000/clubs/testclub"
+
+        response = clubs.update_club(request.json)
+        # if response["result"] == "success":
+        return jsonify(response["message"])
+        # else:
+        #     return {}   
  
     elif request.method == "DELETE":
-        # curl -X DELETE "http://127.0.0.1:5000/games/ahhhh"
-        response = games.remove_game(game_name)
-        if response["result"] == "success":
-            return jsonify(response["message"])
-        else:
-            return {}   
-
-
-def get_game_scs(game_name):
-    # curl "http://127.0.0.1:5000/games/scorecards/ourGame2"
-    gameScorecards = []
-    game = games.get_game(name = game_name)
-    print("working")
-    if game["result"] == "success":
-        id = game["message"]["id"]
+        # curl -X DELETE "http://127.0.0.1:5000/clubs/newClub"
+        response = clubs.remove_club(name_id)
+        # if response["result"] == "success":
+        return jsonify(response["message"])
+        # else:
+            # return {}   
+            
+def get_user_id(id):
+    response = users.get_user(id = id)
+    if response["result"] == "success":
+        return jsonify(response["message"])
     else:
-        return []    
-    print("id",id)
-    scs = scorecards.get_game_scorecards(id)
-    
-    return scs["message"]
+        return {}
+      
+
