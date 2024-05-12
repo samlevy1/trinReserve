@@ -4,7 +4,7 @@ from flask import jsonify
 import os
 import sys
 
-from controllers import UsersController, ClubsController, RoomsController, ClubLeadersController
+from controllers import UsersController, ClubsController, RoomsController, ClubLeadersController, MeetingsController
 # from controllers import  ClubsController
 print(dir(RoomsController))
 
@@ -57,15 +57,13 @@ app.add_url_rule('/leaderClubs/<leader_id>', view_func=ClubLeadersController.get
 app.add_url_rule('/rooms', view_func=RoomsController.c_rRooms, methods = ["GET", "POST"])
 app.add_url_rule('/rooms/<room_id>', view_func=RoomsController.rRoom_u_d, methods = ["GET", "PUT", "DELETE"])
 
-# app.add_url_rule('/room/<id>', view_func=RoomsController.c_rRooms)
-# app.add_url_rule('/rooms/<id>', view_func=RoomsController.rClub_u_d,  methods = ["PUT", "DELETE"])
-
-# # Meetings
-# app.add_url_rule('/meetings', view_func=MeetingsController.c_rGames, methods = ["GET", "POST"])
-# app.add_url_rule('/meetings/<id>/<date.club_id.room_id>', view_func=MeetingsController.c_rGames)
-# app.add_url_rule('/meetings/<id>', view_func=MeetingsController.c_rGames, methods = ["PUT", "DELETE"])
-# app.add_url_rule('/roomMeetings/<room_id>', view_func=MeetingsController.c_rGames)
-# app.add_url_rule('/clubMeetings/<club_id>', view_func=MeetingsController.c_rGames)
-# app.add_url_rule('/attendee/<id>', view_func=MeetingsController.c_rGames)
+# Meetings
+app.add_url_rule('/meetings', view_func=MeetingsController.c_rMeetings, methods = ["GET", "POST"])
+app.add_url_rule('/meetings/<meeting_id>', view_func=MeetingsController.rMeeting_u_d, methods = ["GET","PUT", "DELETE"])
+app.add_url_rule('/roomMeetings/<room_id>', view_func=MeetingsController.getRoomMeetings)
+app.add_url_rule('/clubMeetings/<club_id>', view_func=MeetingsController.getClubMeetings)
+app.add_url_rule('/dateMeetings/<date>', view_func=MeetingsController.getDateMeetings)
+app.add_url_rule('/clubDateMeeting/<club_id>/<date>', view_func=MeetingsController.getClubDateMeeting)
+app.add_url_rule('/attendee/<meeting_id>', view_func=MeetingsController.addAttendee)
 
 app.run(debug=True, port=5000)

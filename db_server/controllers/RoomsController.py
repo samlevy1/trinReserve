@@ -69,11 +69,3 @@ def rRoom_u_d(room_id):
         # else:
             # return {}   
             
-def get_user_id(id):
-    response = users.get_user(id = id)
-    if response["result"] == "success":
-        return jsonify(response["message"])
-    else:
-        return {}
-      
-

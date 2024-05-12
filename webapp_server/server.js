@@ -33,6 +33,7 @@ app.get('/', async function(request, response) {
 app.get('/home/:date', async function(request, response) {
   console.log(request.method, request.url) //event logging
 
+  
 
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
