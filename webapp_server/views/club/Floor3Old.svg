@@ -36,16 +36,19 @@
     <text x="315" y="115" font-family="Verdana" font-size="12">Ceramics</text>
 
 <!-- U-304 -->
+<a href="/roomInfo?room=U-304&size=30">
   <path class = "room" id="U-304" d="M 400,50 L 500,50 L 500,150 L 400,150 Z" stroke="black" fill="white" />
   <text x="425" y="100" font-family="Verdana" font-size="12">U-304</text>
+</a>
 
 <!-- U-305 -->
+<a href="/roomInfo?room=U-305&size=30">
   <path class = "room" id="U-305" d="M 500,50 L 600,50 L 600,150 L 500,150 Z" stroke="black" fill="white" />
   <text x="525" y="100" font-family="Verdana" font-size="12">U-305</text>
-
+</a>
 
 <!-- U-306 -->
-  <path class = "room" id="U-306" d="M 600,50 L 700,50 L 700,150 L 600,150 Z" stroke="black" fill="white" />
+  <path class = "space" id="U-306" d="M 600,50 L 700,50 L 700,150 L 600,150 Z" stroke="black" fill="white" />
   <text x="625" y="100" font-family="Verdana" font-size="12">U-306</text>
 
 

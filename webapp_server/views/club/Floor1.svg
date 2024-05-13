@@ -7,8 +7,10 @@
 
 <!-- FIRST COLUMN   -->
   <!-- Room U-109 -->
+  <a href="/roomInfo?room=U-109&size=30">
   <path class = "room" id="U-109" d="M 100,100 L 200,100 L 200,200 L 100,200 Z" stroke="black" fill="white" />
   <text x="125" y="155" font-family="Verdana" font-size="12">U-109</text>
+  </a>
 
   <!-- U-108A Trash Room-->
   <path class = "space" id="U-108A" d="M 100,200 L 200,200 L 200,250 L 100,250 Z" stroke="black" fill="white" />
@@ -56,8 +58,10 @@
   <text x="345" y="450" font-family="Verdana" font-size="12">U-110:Nurse</text>
 
   <!-- U-113 -->
+  <a href="/roomInfo?room=U-113&size=30">
   <path class = "room" id="U-113" d="M 535,100 L 435,100 L 435,200 L 535,200 Z" stroke="black" fill="white" />
   <text x="460" y="155" font-family="Verdana" font-size="12">U-113</text>
+  </a>
 
  <!-- U-117A -->
   <path class = "space" id="U-117A" d="M 535,200 L 435,200 L 435,250 L 535,250 Z" stroke="black" fill="#ddbdfc" />
@@ -90,8 +94,10 @@
 
 <!-- THIRD COLUMN -->
   <!-- U-114 -->
+  <a href="/roomInfo?room=U-114&size=30">
   <path class = "room" id="U-114" d="M 570,100 L 670,100 L 670,200 L 570,200 Z" stroke="black" fill="white" />
   <text x="595" y="155" font-family="Verdana" font-size="12">U-114</text>
+  </a>
 
   <!-- U-115 -->
   <path class = "space" id="U-115" d="M 570,200 L 670,200 L 670,250 L 570,250 Z" stroke="black" fill="white" />
@@ -114,12 +120,16 @@
   <text x="595" y="440" font-family="Verdana" font-size="12">Fac Lounge</text>
 
    <!-- U119 -->
+   <a href="/roomInfo?room=U-119&size=30">
   <path class = "room" id="U-119" d="M 570,600 L 670,600 L 670,500 L 570,500 Z" stroke="black" fill="white" />
   <text x="595" y="550" font-family="Verdana" font-size="12">U-119</text>
-  
+   </a>
+ 
    <!-- U120 -->
+   <a href="/roomInfo?room=U-120&size=30">
   <path class = "room" id="U-120" d="M 570,600 L 670,600 L 670,700 L 570,700 Z" stroke="black" fill="white" />
   <text x="595" y="650" font-family="Verdana" font-size="12">U-120</text>
+  </a>
 
   <!-- CHAPEL -->
   <path class = "space" id="U-108" d="M 235,535 L 535,535 L 535,800 L 235,800 Z" stroke="black" fill="white" />

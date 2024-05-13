@@ -5,29 +5,37 @@
     /* Additional styles for hover effects would go here */
   </style>
 
-<!-- FIRST ROW   -->
+<!-- FIRST ROW -->
 
  <!-- Stair N-A -->
-  <path class = "empty" id="Stair N-A" d="M 100,200 L 150,200 L 150,100 L 100,100 Z" stroke="black" fill="#acd2e3" />
+  <path class="empty" id="Stair N-A" d="M 100,200 L 150,200 L 150,100 L 100,100 Z" stroke="black" fill="#acd2e3" />
   <text x="102" y="150" font-family="Verdana" font-size="10">Stair N-A</text>
 
-
   <!-- N-316 -->
-  <path class = "room" id="N-316" d="M 150,100 L 250,100 L 250,200 L 150,200 Z" stroke="black" fill="white" />
-  <text x="175" y="155" font-family="Verdana" font-size="12">N-316</text>
+  <!-- N-316 with additional size parameter -->
+  <a href="/roomInfo?room=N-316&size=30">
+    <path class="room" id="N-316" d="M 150,100 L 250,100 L 250,200 L 150,200 Z" stroke="black" fill="white"/>
+    <text x="175" y="155" font-family="Verdana" font-size="12">N-316</text>
+  </a>
+
 
   <!-- N-315 -->
-  <path class = "room" id="N-315" d="M 250,100 L 350,100 L 350,200 L 250,200 Z" stroke="black" fill="white" />
-  <text x="275" y="155" font-family="Verdana" font-size="12">N-315</text>
+  <a href="/roomInfo?room=N-315">
+    <path class="room" id="N-315" d="M 250,100 L 350,100 L 350,200 L 250,200 Z" stroke="black" fill="white"/>
+    <text x="275" y="155" font-family="Verdana" font-size="12">N-315</text>
+  </a>
 
  <!-- N-314 -->
-  <path class = "room" id="N-314" d="M 350,100 L 450,100 L 450,200 L 350,200 Z" stroke="black" fill="white" />
-  <text x="375" y="155" font-family="Verdana" font-size="12">N-314</text>
+  <a href="/roomInfo?room=N-314">
+    <path class="room" id="N-314" d="M 350,100 L 450,100 L 450,200 L 350,200 Z" stroke="black" fill="white" />
+    <text x="375" y="155" font-family="Verdana" font-size="12">N-314</text>
+  </a>
 
 <!-- N-313 -->
-  <path class = "room" id="N-313" d="M 450,100 L 550,100 L 550,200 L 450,200 Z" stroke="black" fill="white" />
-  <text x="475" y="155" font-family="Verdana" font-size="12">N-313</text>
-  
+  <a href="/roomInfo?room=N-313">
+    <path class="room" id="N-313" d="M 450,100 L 550,100 L 550,200 L 450,200 Z" stroke="black" fill="white" />
+    <text x="475" y="155" font-family="Verdana" font-size="12">N-313</text>
+  </a>
 
 <!-- N-310 -->
   <path class = "space" id="N-310" d="M 550,100 L 650,100 L 650,200 L 550,200 Z" stroke="black" fill="white" />
@@ -40,77 +48,93 @@
     <text x="660" y="175" font-family="Verdana" font-size="12">English Office</text>
 
 <!-- N-307 -->
-  <path class = "room" id="N-307" d="M 750,100 L 850,100 L 850,200 L 750,200 Z" stroke="black" fill="white" />
-  <text x="775" y="155" font-family="Verdana" font-size="12">N-307</text>
+  <a href="/roomInfo?room=N-307">
+    <path class="room" id="N-307" d="M 750,100 L 850,100 L 850,200 L 750,200 Z" stroke="black" fill="white" />
+    <text x="775" y="155" font-family="Verdana" font-size="12">N-307</text>
+  </a>
 
 <!-- N-305 -->
-  <path class = "room" id="N-305" d="M 850,100 L 950,100 L 950,200 L 850,200 Z" stroke="black" fill="white" />
-  <text x="875" y="155" font-family="Verdana" font-size="12">N-305</text>
-
+  <a href="/roomInfo?room=N-305">
+    <path class="room" id="N-305" d="M 850,100 L 950,100 L 950,200 L 850,200 Z" stroke="black" fill="white" />
+    <text x="875" y="155" font-family="Verdana" font-size="12">N-305</text>
+  </a>
 
 <!-- N-301 -->
-  <path class = "room" id="N-305" d="M 950,100 L 1050,100 L 1050,200 L 950,200 Z" stroke="black" fill="white" />
-  <text x="975" y="155" font-family="Verdana" font-size="12">N-301</text>
+  <a href="/roomInfo?room=N-301">
+    <path class="room" id="N-301" d="M 950,100 L 1050,100 L 1050,200 L 950,200 Z" stroke="black" fill="white" />
+    <text x="975" y="155" font-family="Verdana" font-size="12">N-301</text>
+  </a>
 
- <!-- Stair N-A -->
+<!-- Stair N-A -->
   <path class = "empty" id="Stair N-A" d="M 1050,200 L 1100,200 L 1100,100 L 1050,100 Z" stroke="black" fill="#acd2e3" />
   <text x="1052" y="150" font-family="Verdana" font-size="10">Stair N-A</text>
 
-<!-- SECOND ROW   -->
-
-    <!-- N-317 -->
-    <path class = "room" id="N-317" d="M 125,250 L 250,250 L 250,350 L 125,350 Z" stroke="black" fill="white" />
+<!-- N-317 -->
+  <a href="/roomInfo?room=N-317">
+    <path class="room" id="N-317" d="M 125,250 L 250,250 L 250,350 L 125,350 Z" stroke="black" fill="white" />
     <text x="170" y="305" font-family="Verdana" font-size="12">N-317</text>
+  </a>
 
-     <!-- N-321 -->
+<!-- N-321 -->
     <path class = "space" id="N-321" d="M 175,350 L 250,350 L 250,450 L 175,450 Z" stroke="black" fill="white" />
     <text x="190" y="405" font-family="Verdana" font-size="12">N-321</text>
 
-     <!-- N-317A -->
+<!-- N-317A -->
+  <a href="/roomInfo?room=N-317">
     <path class = "room" id="N-317A" d="M 250,250 L 350,250 L 350,450 L 250,450 Z" stroke="black" fill="white" />
     <text x="275" y="350" font-family="Verdana" font-size="12">N-317A</text>
+</a>
 
-     <!-- N-324 -->
+<!-- N-324 -->
+<a href="/roomInfo?room=N-324">
     <path class = "room" id="N-324" d="M 350,250 L 450,250 L 450,450 L 350,450 Z" stroke="black" fill="white" />
     <text x="375" y="350" font-family="Verdana" font-size="12">N-324</text>
+</a>
 
-     <!-- N-312 -->
+<!-- N-312 -->
+<a href="/roomInfo?room=N-312">
     <path class = "room" id="N-312" d="M 450,250 L 550,250 L 550,450 L 450,450 Z" stroke="black" fill="white" />
     <text x="475" y="350" font-family="Verdana" font-size="12">N-312</text>
+</a>
 
-    <!-- BATHROOM-->
+<!-- BATHROOM-->
     <path class = "space" id="Bathroom" d="M 550,250 L 600,250 L 600,450 L 550,450 Z" stroke="black" fill="white" />
     <text x="565" y="350" font-family="Verdana" font-size="12">WC</text>
+</a>
 
-
-      <!-- N-307 -->
+<!-- N-307 -->
+<a href="/roomInfo?room=N-307">
     <path class = "room" id="N-307" d="M 650,250 L 750,250 L 750,450 L 650,450 Z" stroke="black" fill="white" />
     <text x="675" y="350" font-family="Verdana" font-size="12">N-307</text>
+</a>
 
-     <!-- N-306 -->
     <path class = "space" id="N-306" d="M 750,250 L 800,250 L 800,450 L 750,450 Z" stroke="black" fill="white" />
     <text x="755" y="350" font-family="Verdana" font-size="12">N-306</text>
     <text x="752" y="365" font-family="Verdana" font-size="12">Science</text>
     <text x="756" y="380" font-family="Verdana" font-size="12">Office</text>
 
-    <!-- N-328 -->
-    <path class = "space" id="N-306" d="M 800,350 L 850,350 L 850,450 L 800,450 Z" stroke="black" fill="white" />
+<!-- N-328 -->
+<a href="/roomInfo?room=N-328">
+    <path class = "space" id="N-328" d="M 800,350 L 850,350 L 850,450 L 800,450 Z" stroke="black" fill="white" />
     <text x="805" y="400" font-family="Verdana" font-size="12">N-328</text>
+</a>
 
-
-    <!-- BIO PREP LAB -->
+<!-- BIO PREP LAB -->
     <path class = "space" id="Bio" d="M 800,250 L 850,250 L 850,350 L 800,350 Z" stroke="black" fill="white" />
     <!-- <text x="805" y="400" font-family="Verdana" font-size="12">Bio Prep Lab</text> -->
 
 
-     <!-- N-304 -->
+<!-- N-304 -->
+<a href="/roomInfo?room=N-304">
     <path class = "room" id="N-304" d="M 850,250 L 950,250 L 950,450 L 850,450 Z" stroke="black" fill="white" />
     <text x="875" y="350" font-family="Verdana" font-size="12">N-304</text>
+</a>
 
-    <!-- N-302 -->
+<!-- N-302 -->
+<a href="/roomInfo?room=N-302">
     <path class = "room" id="N-307" d="M 950,250 L 1050,250 L 1050,450 L 950,450 Z" stroke="black" fill="white" />
     <text x="975" y="350" font-family="Verdana" font-size="12">N-302</text>
-
+</a>
 
 <!-- THIRD ROW   -->
 
@@ -126,13 +150,16 @@
     <text x="270" y="565" font-family="Verdana" font-size="12">Math Lab</text>
 
  <!-- N-323 -->
+ <a href="/roomInfo?room=N-323">
   <path class = "room" id="N-323" d="M 350,500 L 450,500 L 450,600 L 350,600 Z" stroke="black" fill="white" />
   <text x="375" y="550" font-family="Verdana" font-size="12">N-323</text>
+</a>
 
  <!-- N-325 -->
+ <a href="/roomInfo?room=N-325">
   <path class = "room" id="N-325" d="M 450,500 L 550,500 L 550,600 L 450,600 Z" stroke="black" fill="white" />
   <text x="475" y="550" font-family="Verdana" font-size="12">N-325</text>
-
+</a>
 
  <!-- Stair N-A -->
   <path class = "empty" id="Stair N-A" d="M 550,600 L 600,600 L 600,500 L 550,500 Z" stroke="black" fill="#acd2e3" />
@@ -140,22 +167,28 @@
 
 
  <!-- N-326 -->
+ <a href="/roomInfo?room=N-326">
   <path class = "room" id="N-326" d="M 650,500 L 750,500 L 750,600 L 650,600 Z" stroke="black" fill="white" />
   <text x="675" y="550" font-family="Verdana" font-size="12">N-326</text>
-
+</a>
 
 <!-- N-327 -->
+<a href="/roomInfo?room=N-327">
   <path class = "room" id="N-327" d="M 750,500 L 850,500 L 850,600 L 750,600 Z" stroke="black" fill="white" />
   <text x="775" y="550" font-family="Verdana" font-size="12">N-327</text>
+</a>
 
 <!-- N-329 -->
+<a href="/roomInfo?room=N-329">
   <path class = "room" id="N-329" d="M 850,500 L 950,500 L 950,600 L 850,600 Z" stroke="black" fill="white" />
   <text x="875" y="550" font-family="Verdana" font-size="12">N-329</text>
+</a>
 
 <!-- N-330 -->
+<a href="/roomInfo?room=N-330">
   <path class = "room" id="N-330" d="M 950,500 L 1050,500 L 1050,600 L 950,600 Z" stroke="black" fill="white" />
   <text x="975" y="550" font-family="Verdana" font-size="12">N-330</text>
-
+</a>
 
  <!-- Stair H-F -->
   <path class = "empty" id="Stair N-A" d="M 1050,600 L 1100,600 L 1100,500 L 1050,500 Z" stroke="black" fill="#acd2e3" />

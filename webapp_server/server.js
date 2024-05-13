@@ -238,6 +238,18 @@ app.get('/adminApprove', async function(request, response) {
   });
 });
 
+//GET Room Info page
+app.get('/roomInfo', async function(request, response) {
+  const room = request.query.room;
+  const size = request.query.size; // Get the size parameter from the query string
+  response.render("club/roomInfo", {
+    room: room || "Unknown Room", // Provide a default value if room is not specified
+    size: size || "Unknown Size"  // Provide a default value if size is not specified
+  });
+});
+
+
+
 app.get('/approve/:date/:room/:club', async function(request, response) {
   console.log(request.method, request.url,request.params) //event logging
   console.log(request.body)

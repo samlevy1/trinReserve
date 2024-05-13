@@ -22,14 +22,18 @@
   <text x="220" y="85" font-family="Verdana" font-size="14" text-anchor="middle" alignment-baseline="central">Music</text>
 
   <!-- Fourth rectangle, length 200 -->
+  <a href="/roomInfo?room=N-206&size=30">
   <path class = "room" id="N-206" d="M 270,0 L 470,0 L 470,150 L 270,150 Z" stroke="black" fill="white" />
   <text x="370" y="65" font-family="Verdana" font-size="14" text-anchor="middle" alignment-baseline="central">N-206</text>
   <text x="370" y="85" font-family="Verdana" font-size="14" text-anchor="middle" alignment-baseline="central">Orchestra</text>
+  </a>
 
   <!-- Fifth rectangle, length 200 -->
+  <a href="/roomInfo?room=N-203&size=30">
   <path class = "room" id="N-203" d="M 470,0 L 670,0 L 670,150 L 470,150 Z" stroke="black" fill="white" />
   <text x="570" y="65" font-family="Verdana" font-size="14" text-anchor="middle" alignment-baseline="central">N-203</text>
   <text x="570" y="85" font-family="Verdana" font-size="14" text-anchor="middle" alignment-baseline="central">Band</text>
+  </a>
 
   <!-- Sixth rectangle, length 250 -->
   <path class = "space" id="N-200" d="M 670,0 L 920,0 L 920,150 L 670,150 Z" stroke="black" fill="white" />
@@ -44,9 +48,11 @@
 
 <!-- SECOND ROW -->
 <!-- N-212 Gymnasium -->
+<a href="/roomInfo?room=N-212&size=30">
   <path class = "room" id="N-212" d="M 100,200 L 450,200 L 450,450 L 100,450 Z" stroke="black" fill="white" />
   <text x="275" y="300" font-family="Verdana" font-size="14" text-anchor="middle">N-212</text>
   <text x="275" y="320" font-family="Verdana" font-size="14" text-anchor="middle">Gymnasium</text>
+</a>
 
   <!-- Women's Bathroom -->
   <path d="M 450,200 L 500,200 L 500,325 L 450,325 Z" stroke="black" fill="#ddbdfc" />
@@ -57,24 +63,30 @@
   <path d="M 450,325 L 500,325 L 500,450 L 450,450 Z" stroke="black" fill="#ddbdfc" />
   <text x="475" y="375" font-family="Verdana" font-size="10" text-anchor="middle">Men's</text>
   <text x="475" y="395" font-family="Verdana" font-size="10" text-anchor="middle">Bathroom</text>
-
+  
 
   <!-- N-214 Practice Room -->
+  <a href="/roomInfo?room=N-214&size=30">
   <path class = "room" id="N-214" d="M 550,200 L 600,200 L 600,325 L 550,325 Z" stroke="black" fill="white" />
   <text x="575" y="240" font-family="Verdana" font-size="10" text-anchor="middle">N-214</text>
   <text x="575" y="255" font-family="Verdana" font-size="10" text-anchor="middle">Practice </text>
   <text x="575" y="270" font-family="Verdana" font-size="10" text-anchor="middle"> Room</text>
+  </a>
 
   <!-- N-204 Practice Room -->
+  <a href="/roomInfo?room=N-204&size=30">
   <path class = "room" id="N-204" d="M 600,200 L 700,200 L 700,325 L 600,325 Z" stroke="black" fill="white" />
   <text x="650" y="240" font-family="Verdana" font-size="10" text-anchor="middle">N-204</text>
   <text x="650" y="255" font-family="Verdana" font-size="10" text-anchor="middle">Practice Room</text>
+  </a>
 
   <!-- N-202 Practice Room -->
+  <a href="/roomInfo?room=N-202&size=30">
   <path class = "room" id="N-202" d="M 700,200 L 750,200 L 750,325 L 700,325 Z" stroke="black" fill="white" />
   <text x="725" y="240" font-family="Verdana" font-size="10" text-anchor="middle">N-202</text>
   <text x="725" y="255" font-family="Verdana" font-size="10" text-anchor="middle">Practice </text>
   <text x="725" y="270" font-family="Verdana" font-size="10" text-anchor="middle"> Room</text>
+  </a>
 
   <!-- N-213 Perf. Arts Office -->
   <path class = "space" id="N-213" d="M 550,325 L 700,325 L 700,450 L 550,450 Z" stroke="black" fill="white" />
@@ -82,14 +94,18 @@
   <text x="625" y="380" font-family="Verdana" font-size="10" text-anchor="middle">Perf. Arts Office</text>
 
   <!-- N-215 Production Studio -->
+  <a href="/roomInfo?room=N-215&size=30">
   <path class = "room" id="N-215" d="M 700,325 L 750,325 L 750,450 L 700,450 Z" stroke="black" fill="white" />
   <text x="725" y="365" font-family="Verdana" font-size="10" text-anchor="middle">N-215</text>
   <text x="725" y="380" font-family="Verdana" font-size="10" text-anchor="middle">Studio</text>
+  </a>
 
   <!-- N-201 Chorus -->
+  <a href="/roomInfo?room=N-201&size=30">
   <path class = "room" id="N-201" d="M 750,200 L 900,200 L 900,450 L 750,450 Z" stroke="black" fill="white" />
   <text x="825" y="310" font-family="Verdana" font-size="10" text-anchor="middle">N-201</text>
   <text x="825" y="325" font-family="Verdana" font-size="10" text-anchor="middle">Chorus</text>
+  </a>
 
   <!-- Coat Room -->
   <path d="M 1070,200 L 1170,200 L 1170,450 L 1070,450 Z" stroke="black" fill="white" />
