@@ -31,9 +31,16 @@ def c_rMeetings():
             # return [] 
         
     elif request.method == "POST":
-
-        #curl -X POST -H "Content-type: application/json" -d '{"date":"2008-11-11", "club_id": 222, "room_id": "222", "meeting_description": "help", "seats_left": 10, "attendees": 10}' "http://127.0.0.1:5000/meetings" 
-       
+        '''
+        curl -X POST -H "Content-type: application/json" -d '
+        {"date":"2024-05-12", 
+         "club_id": 8553324501615078, 
+         "room_id": "N302", 
+         "meeting_description": "translating shit", 
+         "seats_left": 10, 
+         "attendees": 10
+         }' "http://127.0.0.1:5000/meetings" 
+        '''
 
         response = meetings.create_meeting(request.json)
         
@@ -55,7 +62,17 @@ def rMeeting_u_d(meeting_id):
             return {}   
 
     elif request.method == "PUT":
-        #curl -X PUT -H "Content-type: application/json" -d '{"id" : 8778983053005885, "date":"2011-11-11", "club_id": 123, "room_id": "N330", "meeting_description": "new meeting", "seats_left": 10, "attendees": 10}' "http://127.0.0.1:5000/meetings/8778983053005885"
+        '''
+        #curl -X PUT -H "Content-type: application/json" -d '
+        {"id" : 4562955852282287, 
+         "date":"2011-11-11", 
+         "club_id": 8553324501615078,
+         "room_id": "N302", 
+         "meeting_description": "yayy classics club", 
+         "seats_left": 10, 
+         "attendees": 10,
+         "approved": "false"}' "http://127.0.0.1:5000/meetings/4562955852282287"
+        '''
 
         response = meetings.update_meeting(request.json)
         # if response["result"] == "success":
@@ -111,6 +128,15 @@ def addAttendee(meeting_id):
      #  curl "http://127.0.0.1:5000/attendee/8978865522329376"
 
     response = meetings.add_attendee(meeting_id)
+    if response["result"] == "success":
+        return jsonify(response["message"])
+    else:
+        return response["message"]
+    
+def approveMeeting(meeting_id):   
+     #  curl "http://127.0.0.1:5000/approve/4562955852282287"
+
+    response = meetings.approve_meeting(meeting_id)
     if response["result"] == "success":
         return jsonify(response["message"])
     else:

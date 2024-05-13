@@ -32,7 +32,7 @@ def c_rClubs():
             # return [] 
         
     elif request.method == "POST":
-        #curl -X POST -H "Content-type: application/json" -d '{"name":"testclub"}' "http://127.0.0.1:5000/clubs"
+        #curl -X POST -H "Content-type: application/json" -d '{"name":"classic"}' "http://127.0.0.1:5000/clubs"
         # return jsonify(request.json)
         response = clubs.create_club(request.json)
         # if response["result"] == "success":
@@ -67,11 +67,12 @@ def rClub_u_d(name_id):
         # else:
             # return {}   
             
-def get_user_id(id):
-    response = users.get_user(id = id)
+def get_club_id(id):
+    # curl "http://127.0.0.1:5000/clubs/id/6921089266723855"
+    response = clubs.get_club(id)
     if response["result"] == "success":
         return jsonify(response["message"])
     else:
-        return {}
+        return response["message"]
       
 

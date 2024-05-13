@@ -41,11 +41,13 @@ app.add_url_rule('/', view_func=welcome)
 
 # Users
 app.add_url_rule('/users', view_func=UsersController.c_rUsers, methods = ["GET", "POST"])
-app.add_url_rule('/users/<email_id>', view_func=UsersController.rUser_u_d, methods = ["GET", "PUT", "DELETE"])
+
+app.add_url_rule('/users/id/<id>', view_func=UsersController.get_user_id)
 
 # # Clubs
 app.add_url_rule('/clubs', view_func=ClubsController.c_rClubs, methods = ["GET", "POST"])
 app.add_url_rule('/clubs/<name_id>', view_func=ClubsController.rClub_u_d, methods = ["GET", "PUT", "DELETE"])
+app.add_url_rule('/clubs/id/<id>', view_func=ClubsController.get_club_id)
 
 # # Leaders
 app.add_url_rule('/leaders', view_func=ClubLeadersController.c_rLeaders, methods = ["GET", "POST"])
@@ -65,5 +67,6 @@ app.add_url_rule('/clubMeetings/<club_id>', view_func=MeetingsController.getClub
 app.add_url_rule('/dateMeetings/<date>', view_func=MeetingsController.getDateMeetings)
 app.add_url_rule('/clubDateMeeting/<club_id>/<date>', view_func=MeetingsController.getClubDateMeeting)
 app.add_url_rule('/attendee/<meeting_id>', view_func=MeetingsController.addAttendee)
+app.add_url_rule('/approve/<meeting_id>', view_func=MeetingsController.approveMeeting)
 
 app.run(debug=True, port=5000)

@@ -62,7 +62,7 @@ class Club:
             cursor = db_connection.cursor()
 
             if id != None:
-                if self.exists(id = id)["message"]:
+                if self.exists(id = int(id))["message"]:
                     query = f"SELECT * from {self.table_name} WHERE {self.table_name}.id = {id};"
                 else:
                     return {"result":"error",

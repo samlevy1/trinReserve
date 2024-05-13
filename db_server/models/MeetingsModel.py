@@ -20,7 +20,8 @@ class Meeting:
                     room_id TEXT,
                     meeting_description TEXT,
                     seats_left INTEGER,
-                    attendees INTEGER
+                    attendees INTEGER,
+                    approved TEXT
                 )
                 """
         cursor.execute(f"DROP TABLE IF EXISTS {self.table_name};")
@@ -36,7 +37,8 @@ class Meeting:
             meeting_id = random.randint(0, 9007199254740991) #non-negative range of SQLITE3 INTEGER
             
             # check to see if exists already!!
-            if self.get_clubDateMeeting(meeting_info["club_id"], meeting_info["date"]):
+            print(self.get_clubDateMeeting(meeting_info["club_id"], meeting_info["date"])["message"] != [])
+            if self.get_clubDateMeeting(meeting_info["club_id"], meeting_info["date"])["message"] != []:
                 return {"result": "error",
                     "message": "meeting already exists"
                     }
@@ -46,9 +48,9 @@ class Meeting:
                 meeting_id = random.randint(0, 9007199254740991)
 
 
-            meeting_data = (meeting_id, meeting_info["date"], meeting_info["club_id"], meeting_info["room_id"], meeting_info["meeting_description"], meeting_info["seats_left"], meeting_info["attendees"])
+            meeting_data = (meeting_id, meeting_info["date"], meeting_info["club_id"], meeting_info["room_id"], meeting_info["meeting_description"], meeting_info["seats_left"], meeting_info["attendees"], "false")
             
-            cursor.execute(f"INSERT INTO {self.table_name} VALUES (?, ?, ?, ?, ?, ?, ?);", meeting_data)
+            cursor.execute(f"INSERT INTO {self.table_name} VALUES (?, ?, ?, ?, ?, ?, ?, ?);", meeting_data)
             db_connection.commit()
         
             return {"result": "success",
@@ -122,7 +124,7 @@ class Meeting:
                 return {"result":"error",
                         "message":"id doesn't exist"}
             #  room_id = '{meeting_info["room_id"]}', meeting_description = '{meeting_info["meeting_description"]}', seats_left = '{meeting_info["seats_left"]}', attendees = '{meeting_info["attendees"]}'
-            query = f"UPDATE {self.table_name} SET date = '{meeting_info['date']}', room_id = '{meeting_info['room_id']}', meeting_description = '{meeting_info['meeting_description']}' , seats_left = '{meeting_info['seats_left']}', attendees = '{meeting_info['attendees']}'  WHERE id = '{meeting_info['id']}';"
+            query = f"UPDATE {self.table_name} SET date = '{meeting_info['date']}', room_id = '{meeting_info['room_id']}', meeting_description = '{meeting_info['meeting_description']}' , seats_left = '{meeting_info['seats_left']}', attendees = '{meeting_info['attendees']}', approved = '{meeting_info['approved']}'  WHERE id = '{meeting_info['id']}';"
                     
             results = cursor.execute(query)
 
@@ -202,7 +204,8 @@ class Meeting:
                 "room_id": meeting_info[3],
                 "meeting_description": meeting_info[4],
                 "seats_left": meeting_info[5],
-                "attendees": meeting_info[6]
+                "attendees": meeting_info[6], 
+                "approved": meeting_info[7]
                 }
 
         
@@ -331,3 +334,29 @@ class Meeting:
             
             finally:
                 db_connection.close()
+
+    def approve_meeting(self, id):
+        try: 
+            db_connection = sqlite3.connect(self.db_name)
+            cursor = db_connection.cursor()
+
+            if self.exists(id)["message"] == False:
+                return {"result":"error",
+                        "message":"id doesn't exist"}
+                        
+            query = f"UPDATE {self.table_name} SET approved = 'true' WHERE id = {id};"
+            
+            results = cursor.execute(query)
+
+            db_connection.commit()
+
+            return {"result": "success",
+                    "message": self.get_meeting(id)["message"]
+                    }
+        
+        except sqlite3.Error as error:
+            return {"result":"error",
+                    "message":error}
+        
+        finally:
+            db_connection.close()

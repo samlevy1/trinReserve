@@ -15,13 +15,19 @@
     </div>
 
     <div class="header">
+<<<<<<< Updated upstream
         <select id = "floorSelect" class="form-control">
+=======
+      <form action="/leaderPage/email" method="GET" >
+        <select id = "floorSelect" class="form-control" name = "floor" onchange="this.form.submit()">
+>>>>>>> Stashed changes
           <option value="FirstFloor">First Floor</option>
           <option value="SecondFloorOld">Second Floor Old Building</option>
           <option value="SecondFloorNew">Second Floor New Building</option>
           <option value="ThirdFloorOld">Third Floor Old Building</option>
           <option value="ThirdFloorNew" selected>Third Floor New Building</option>
         </select>
+<<<<<<< Updated upstream
         <select class="form-control" id="dateSelect">
       </select>
       <script>
@@ -36,6 +42,13 @@
               selectElement.appendChild(option);
           }
       </script>
+=======
+
+        <input type="date" id="date_select" name="date" onchange="this.form.submit()">
+       
+      <form>
+
+>>>>>>> Stashed changes
     </div>
 
     <!-- <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button> -->
@@ -45,12 +58,12 @@
           <div class="col-md-12">
             <h2>My Clubs</h2>
             
-            <ul class="list-group">
-              <li class="list-group-item">Math Team </li>
-              <li class="list-group-item">Classics Club</li>
-              <li class="list-group-item">French Club</li>
-              
-            </ul>
+
+            <% for (let club in clubs) {%>
+              <li class="list-group-item"><%=clubs[club]%> </li>
+            <%}%>
+
+           
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ def c_rUsers():
         #     return [] 
         
     elif request.method == "POST":
-        #curl -X POST -H "Content-type: application/json" -d '{"email":"help@trinityschoolnyc.org","password":"123TriniT", "administrator": "0"}' "http://127.0.0.1:5000/users"
+        #curl -X POST -H "Content-type: application/json" -d '{"email":"sofia@trinityschoolnyc.org","password":"123TriniT", "administrator": "false"}' "http://127.0.0.1:5000/users"
         # return jsonify(request.json)
         response = users.create_user(request.json)
         print(f"the response is {response['message']}")
@@ -54,7 +54,7 @@ def rUser_u_d(email_id):
             return {}   
 
     elif request.method == "PUT":
-        #curl -X PUT -H "Content-type: application/json" -d '{"id":8490684713803214,"email":"help@trinityschoolnyc.org", "password":"newPassword", "administrator": "1"}' "http://127.0.0.1:5000/users/help@trinityschoolnyc.org"
+        #curl -X PUT -H "Content-type: application/json" -d '{"id":"109395625686181264666","email":"sofia.zhang24@trinityschoolnyc.org", "leader":"true", "administrator": "true"}' "http://127.0.0.1:5000/users/sofia.zhang24@trinityschoolnyc.org"
 
         response = users.update_user(request.json)
         # if response["result"] == "success":

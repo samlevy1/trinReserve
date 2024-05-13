@@ -34,7 +34,7 @@ def c_rRooms():
             # return [] 
         
     elif request.method == "POST":
-        #curl -X POST -H "Content-type: application/json" -d '{"id":"N301", "seats": 10}' "http://127.0.0.1:5000/rooms"
+        #curl -X POST -H "Content-type: application/json" -d '{"id":"N302", "seats": 10}' "http://127.0.0.1:5000/rooms"
         # return jsonify(request.json)
         response = rooms.create_room(request.json)
         # if response["result"] == "success":

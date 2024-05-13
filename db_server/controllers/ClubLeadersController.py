@@ -35,7 +35,7 @@ def c_rLeaders():
             return [] 
         
     elif request.method == "POST":
-        #curl -X POST -H "Content-type: application/json" -d '{"user_id":12345,"club_id":3123}' "http://127.0.0.1:5000/leaders"
+        #curl -X POST -H "Content-type: application/json" -d '{"user_id":8534749804560213,"club_id":8553324501615078}' "http://127.0.0.1:5000/leaders"
         
         dict = request.json
         print(dict["club_id"],dict["user_id"])

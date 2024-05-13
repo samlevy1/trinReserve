@@ -24,9 +24,9 @@ class User:
         cursor = db_connection.cursor()
         schema=f"""
                 CREATE TABLE {self.table_name} (
-                    id INTEGER PRIMARY KEY UNIQUE,
+                    id TEXT PRIMARY KEY UNIQUE,
                     email TEXT UNIQUE,
-                    password TEXT, 
+                    leader TEXT, 
                     administrator TEXT
                 )
                 """
@@ -40,30 +40,19 @@ class User:
             cursor = db_connection.cursor()
 
             result = "success"
-            user_id = random.randint(0, 9007199254740991) #non-negative range of SQLITE3 INTEGER
 
             if self.exists(email=user_details["email"])["message"]:
                 result = "error"
                 message = "email already exists"
 
-            # check to see if exists already!!
-            while self.exists(id = user_id)["message"]:
-                user_id = random.randint(0, 9007199254740991)
-            
+      
             #email checks
             email = user_details["email"]
             if "@" not in email or email[len(email)-4] != "." or email[len(email)-3:].isalpha() == False:
                 result = "error"
                 message = "email incorrect format"
 
-            
-
-            pd = user_details["password"]
-            if len(pd) < 8 or pd.isupper() == True or pd.islower() == True or pd.isalpha():
-                result = "error" 
-                message = "password incorrect format"
-
-            user_data = (user_id, user_details["email"], user_details["password"], user_details["administrator"])
+            user_data = (user_details["user_id"], user_details["email"], user_details["leader"], user_details["administrator"])
             
             # print(user_data)
             # print(self.to_dict(user_data))
@@ -96,8 +85,8 @@ class User:
             
             if id != None:
                
-                if self.exists(id = int(id))["message"]:
-                    query = f"SELECT * from {self.table_name} WHERE {self.table_name}.id = {int(id)};"
+                if self.exists(id = id)["message"]:
+                    query = f"SELECT * from {self.table_name} WHERE {self.table_name}.id = '{id}';"
                 else:
                     return {"result":"error",
                             "message":"id doesn't exist"}
@@ -158,7 +147,7 @@ class User:
                         "message":"user doesn't exist"}
             id = self.get_user(email=user_info["email"])["message"]["id"]
 
-            query = f"UPDATE {self.table_name} SET email = '{user_info['email']}', password = '{user_info['password']}', administrator = '{user_info['administrator']}' WHERE id = {id};"
+            query = f"UPDATE {self.table_name} SET email = '{user_info['email']}', leader = '{user_info['leader']}', administrator = '{user_info['administrator']}' WHERE id = '{id}';"
 
             # results = cursor.execute(f"SELECT * FROM {self.table_name} WHERE id = {user_info['id']}").fetchall()
             results = cursor.execute(query)
@@ -241,8 +230,10 @@ class User:
     def to_dict(self, user_info):
         dict = {"id": user_info[0],
                 "email": user_info[1],
-                "password": user_info[2],
+                "leader": user_info[2],
                 "administrator": user_info[3]
                 }
         
         return dict
+
+    
