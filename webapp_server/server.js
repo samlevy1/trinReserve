@@ -152,8 +152,8 @@ app.get('/', async function(request, response) {
   let url = 'http://127.0.0.1:5000/dateMeetings/' + date;
   let res = await fetch(url);
   let details = JSON.parse(await res.text());
-  // console.log("Meetings: ")
-  // console.log(details)
+  console.log("Meetings: ")
+  console.log(details)
 
   meetings = {}
 
@@ -200,8 +200,9 @@ app.get('/home', async function(request, response) {
 
     //check if leader
     let user_id = request.user["id"]
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
     let details = JSON.parse(await res.text());
+   
     if (details['leader'] == "true"){
       leader = true
     }
@@ -221,19 +222,25 @@ app.get('/home', async function(request, response) {
   meetings = {}
 
   for (meeting of details) {
-    // console.log(meeting)
-    meeting_info = {}
-    meeting_info["room_id"] = meeting["room_id"]
-    meeting_info["meeting_details"] = meeting["meeting_description"]
+    console.log(meeting)
 
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
-    let res = await fetch(url);
-    let club_details = JSON.parse(await res.text());
-    meeting_info["club_name"] = club_details["name"]
+    if (meeting["approved"] == "true"){
+      meeting_info = {}
+      meeting_info["room_id"] = meeting["room_id"]
+      meeting_info["meeting_details"] = meeting["meeting_description"]
+      meeting_info["attendees"] = meeting["attendees"]
 
-    // console.log(meeting_info)
-    meetings[meeting["id"]] = meeting_info
+      let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+      let res = await fetch(url);
+      let club_details = JSON.parse(await res.text());
+      meeting_info["club_name"] = club_details["name"]
 
+
+      // console.log(meeting_info)
+      meetings[meeting["id"]] = meeting_info
+
+    }
+    
 
   }
 
@@ -262,8 +269,9 @@ app.get('/loginPage', async function(request, response) {
 
     //check if leader
     let user_id = request.user["id"]
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
     let details = JSON.parse(await res.text());
+   
     if (details['leader'] == "true"){
       leader = true
     }
@@ -294,7 +302,7 @@ app.get('/attend/:meeting_id', async function(request, response) {
 
     //check if leader
     let user_id = request.user["id"]
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
     let details = JSON.parse(await res.text());
     if (details['leader'] == "true"){
       leader = true
@@ -315,9 +323,9 @@ app.get('/attend/:meeting_id', async function(request, response) {
   let date = new Date().toJSON().slice(0, 10);
 
   // console.log(typeof(date))
-  let url = 'http://127.0.0.1:5000/dateMeetings/' + date;
-  let res = await fetch(url);
-  let details = JSON.parse(await res.text());
+  let url1 = 'http://127.0.0.1:5000/dateMeetings/' + date;
+  let res1 = await fetch(url1);
+  let details = JSON.parse(await res1.text());
   // console.log("Meetings: ")
   // console.log(details)
 
@@ -358,13 +366,31 @@ app.get('/attend/:meeting_id', async function(request, response) {
 //GET leader page
 app.get('/leaderPage/:email', loggedIn, async function(request, response) {
   console.log(request.method, request.url) //event logging
-  
+  let login = false
+  let leader = false
+  let admin = false
+  let user_id = request.user["id"]
+  if(request.user){
+    login = true
+
+    //check if leader
+    
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
+    let details = JSON.parse(await res.text());
+    if (details['leader'] == "true"){
+      leader = true
+    }
+    if (details['administrator'] == "true"){
+      admin = true
+    }
+
+  }
 
   let date = new Date().toJSON().slice(0, 10);
   if (request.query.date != undefined ){
      date = request.query.date;
   }
-  let user_id = 8534749804560213
+
   let res = await fetch('http://127.0.0.1:5000/leaderClubs/' + user_id);
   let details = JSON.parse(await res.text());
 
@@ -389,7 +415,9 @@ app.get('/leaderPage/:email', loggedIn, async function(request, response) {
     feedback:"",
     date: date,
     clubs: clubs,
-    login: true
+    login: true,
+    leader:leader,
+    admin:admin
   });
 });
 
@@ -404,7 +432,7 @@ app.post('/reserve/:date/:room/:email', async function(request, response) {
 
     //check if leader
     let user_id = request.user["id"]
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
     let details = JSON.parse(await res.text());
     if (details['leader'] == "true"){
       leader = true
@@ -457,7 +485,7 @@ app.get('/cancel/:date/:room/:email', async function(request, response) {
 
     //check if leader
     let user_id = request.user["id"]
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
     let details = JSON.parse(await res.text());
     if (details['leader'] == "true"){
       leader = true
@@ -511,7 +539,7 @@ app.post('/edit/:date/:room/:email', async function(request, response) {
 
     //check if leader
     let user_id = request.user["id"]
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
     let details = JSON.parse(await res.text());
     if (details['leader'] == "true"){
       leader = true
@@ -564,7 +592,7 @@ app.get('/adminPage', async function(request, response) {
 
     //check if leader
     let user_id = request.user["id"]
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
     let details = JSON.parse(await res.text());
     if (details['leader'] == "true"){
       leader = true
@@ -601,11 +629,35 @@ app.get('/adminApprove', async function(request, response) {
 
 //GET Room Info page
 app.get('/roomInfo', async function(request, response) {
+  console.log(request.method, request.url) //event logging
   const room = request.query.room;
   const size = request.query.size; // Get the size parameter from the query string
+
+  let login = false
+  let leader = false
+  let admin = false
+  if(request.user){
+    login = true
+
+    //check if leader
+    let user_id = request.user["id"]
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
+    let details = JSON.parse(await res.text());
+   
+    if (details['leader'] == "true"){
+      leader = true
+    }
+    if (details['administrator'] == "true"){
+      admin = true
+    }
+
+  }
   response.render("club/roomInfo", {
     room: room || "Unknown Room", // Provide a default value if room is not specified
-    size: size || "Unknown Size"  // Provide a default value if size is not specified
+    size: size || "Unknown Size",  // Provide a default value if size is not specified
+    login: login,
+    leader:leader,
+    admin:admin
   });
 });
 
@@ -622,7 +674,7 @@ app.get('/approve/:date/:room/:club', async function(request, response) {
 
     //check if leader
     let user_id = request.user["id"]
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
     let details = JSON.parse(await res.text());
     if (details['leader'] == "true"){
       leader = true
@@ -676,7 +728,7 @@ app.get('/adminDetails', async function(request, response) {
 
     //check if leader
     let user_id = request.user["id"]
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
     let details = JSON.parse(await res.text());
     if (details['leader'] == "true"){
       leader = true
@@ -709,7 +761,7 @@ app.get('/cancel/:date/:room', async function(request, response) {
 
     //check if leader
     let user_id = request.user["id"]
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
     let details = JSON.parse(await res.text());
     if (details['leader'] == "true"){
       leader = true
@@ -763,7 +815,7 @@ app.post('/submit', async function(request, response) {
 
     //check if leader
     let user_id = request.user["id"]
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch('http://127.0.0.1:5000/users/id/' + user_id);
     let details = JSON.parse(await res.text());
     if (details['leader'] == "true"){
       leader = true

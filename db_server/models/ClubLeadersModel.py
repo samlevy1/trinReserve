@@ -16,7 +16,7 @@ class Leader:
                 CREATE TABLE {self.table_name} (
                     id INTEGER PRIMARY KEY UNIQUE,
                     club_id INTEGER,
-                    user_id INTEGER
+                    user_id TEXT
                     
                 )
                 """
