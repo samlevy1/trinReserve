@@ -20,7 +20,7 @@
 
 
   <!-- N-315 -->
-  <a href="/roomInfo?room=N-315">
+  <a href="/roomInfo?room=N-315&size=30">
     <path class="room" id="N-315" d="M 250,100 L 350,100 L 350,200 L 250,200 Z" stroke="black" fill="white"/>
     <text x="275" y="155" font-family="Verdana" font-size="12">N-315</text>
   </a>

@@ -7,10 +7,8 @@
 
 <!-- FIRST COLUMN   -->
   <!-- Room U-109 -->
-  <a href="/roomInfo?room=U-109&size=30">
-  <path class = "room" id="U-109" d="M 100,100 L 200,100 L 200,200 L 100,200 Z" stroke="black" fill="white" />
-  <text x="125" y="155" font-family="Verdana" font-size="12">U-109</text>
-  </a>
+  <path class = "space" id="U-109" d="M 100,100 L 200,100 L 200,200 L 100,200 Z" stroke="black" fill="white" />
+  <text x="115" y="155" font-family="Verdana" font-size="12">U-109: Office</text>
 
   <!-- U-108A Trash Room-->
   <path class = "space" id="U-108A" d="M 100,200 L 200,200 L 200,250 L 100,250 Z" stroke="black" fill="white" />
