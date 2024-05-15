@@ -32,7 +32,7 @@ def c_rClubs():
             # return [] 
         
     elif request.method == "POST":
-        #curl -X POST -H "Content-type: application/json" -d '{"name":"classic"}' "http://127.0.0.1:5000/clubs"
+        #curl -X POST -H "Content-type: application/json" -d '{"name":"AAA-SA"}' "http://127.0.0.1:5000/clubs"
         # return jsonify(request.json)
         response = clubs.create_club(request.json)
         # if response["result"] == "success":
@@ -51,7 +51,7 @@ def rClub_u_d(name_id):
             return {}   
 
     elif request.method == "PUT":
-        #curl -X PUT -H "Content-type: application/json" -d '{"name": "newClub", "id": 6153875186766167 }' "http://127.0.0.1:5000/clubs/testclub"
+        #curl -X PUT -H "Content-type: application/json" -d '{"name": "Trinity Times", "id": 7247383849665494 }' "http://127.0.0.1:5000/clubs/trintimes"
 
         response = clubs.update_club(request.json)
         # if response["result"] == "success":

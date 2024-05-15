@@ -158,19 +158,25 @@ app.get('/', async function(request, response) {
   meetings = {}
 
   for (meeting of details) {
-    // console.log(meeting)
-    meeting_info = {}
-    meeting_info["room_id"] = meeting["room_id"]
-    meeting_info["meeting_details"] = meeting["meeting_description"]
+    console.log(meeting)
 
-    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
-    let res = await fetch(url);
-    let club_details = JSON.parse(await res.text());
-    meeting_info["club_name"] = club_details["name"]
+    if (meeting["approved"] == "true"){
+      meeting_info = {}
+      meeting_info["room_id"] = meeting["room_id"]
+      meeting_info["meeting_details"] = meeting["meeting_description"]
+      meeting_info["attendees"] = meeting["attendees"]
 
-    // console.log(meeting_info)
-    meetings[meeting["id"]] = meeting_info
+      let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+      let res = await fetch(url);
+      let club_details = JSON.parse(await res.text());
+      meeting_info["club_name"] = club_details["name"]
 
+
+      // console.log(meeting_info)
+      meetings[meeting["id"]] = meeting_info
+
+    }
+    
 
   }
 
@@ -603,13 +609,51 @@ app.get('/adminPage', async function(request, response) {
 
   }
 
+  let url = 'http://127.0.0.1:5000/dateMeetings/' + date;
+  let res = await fetch(url);
+  let details = JSON.parse(await res.text());
+  console.log("Meetings: ")
+  console.log(details)
+
+  approved_meetings = {}
+  pending_meetings = {}
+
+  for (meeting of details) {
+    console.log(meeting)
+
+    meeting_info = {}
+    meeting_info["room_id"] = meeting["room_id"]
+    meeting_info["meeting_details"] = meeting["meeting_description"]
+    meeting_info["attendees"] = meeting["attendees"]
+
+    let url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+    let res = await fetch(url);
+    let club_details = JSON.parse(await res.text());
+    meeting_info["club_name"] = club_details["name"]
+
+
+    // console.log(meeting_info)
+    
+
+    if (meeting["approved"] == "true"){
+      approved_meetings[meeting["id"]] = meeting_info
+    } else {
+      pending_meetings[meeting["id"]] = meeting_info
+    }
+    
+
+  }
+
+
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
   response.render("admin/admin",{
     feedback:"",
     login: login,
     leader:leader,
-    admin:admin
+    admin:admin,
+    approved_meetings: approved_meetings,
+    pending_meetings: pending_meetings
   });
 });
 
@@ -617,13 +661,28 @@ app.get('/adminPage', async function(request, response) {
 app.get('/adminApprove', async function(request, response) {
   console.log(request.method, request.url) //event logging
 
+  let meeting_id = 1
+
+  let url = 'http://127.0.0.1:5000/meetings/' + meeting_id;
+  let res = await fetch(url);
+  let meeting_details = JSON.parse(await res.text());
+
+  url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+  res = await fetch(url);
+  club_details = JSON.parse(await res.text());
+
+  let club_name = club_details["name"]
+
+
   response.status(200);
   response.setHeader('Content-Type', 'text/html')
   response.render("admin/adminApprove",{
     feedback:"",
     login: login,
     leader:leader,
-    admin:admin
+    admin:admin,
+    club_name:club_name,
+    meeting_details: meeting_details
   });
 });
 
@@ -660,8 +719,6 @@ app.get('/roomInfo', async function(request, response) {
     admin:admin
   });
 });
-
-
 
 app.get('/approve/:date/:room/:club', async function(request, response) {
   console.log(request.method, request.url,request.params) //event logging
@@ -738,6 +795,19 @@ app.get('/adminDetails', async function(request, response) {
     }
 
   }
+
+  let meeting_id = 1
+
+  let url = 'http://127.0.0.1:5000/meetings/' + meeting_id;
+  let res = await fetch(url);
+  let meeting_details = JSON.parse(await res.text());
+
+  url = 'http://127.0.0.1:5000/clubs/id/' + meeting["club_id"];
+  res = await fetch(url);
+  club_details = JSON.parse(await res.text());
+
+  let club_name = club_details["name"]
+
 
 
   response.status(200);

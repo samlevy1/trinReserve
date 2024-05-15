@@ -33,10 +33,10 @@ def c_rMeetings():
     elif request.method == "POST":
         '''
         curl -X POST -H "Content-type: application/json" -d '
-        {"date":"2024-05-12", 
-         "club_id": 8553324501615078, 
-         "room_id": "N302", 
-         "meeting_description": "translating shit", 
+        {"date":"2024-05-15", 
+         "club_id": 2192440634879401, 
+         "room_id": "N330", 
+         "meeting_description": "Discussing asian issues", 
          "seats_left": 10, 
          "attendees": 10
          }' "http://127.0.0.1:5000/meetings" 
@@ -64,14 +64,16 @@ def rMeeting_u_d(meeting_id):
     elif request.method == "PUT":
         '''
         #curl -X PUT -H "Content-type: application/json" -d '
-        {"id" : 4562955852282287, 
-         "date":"2011-11-11", 
-         "club_id": 8553324501615078,
-         "room_id": "N302", 
-         "meeting_description": "yayy classics club", 
-         "seats_left": 10, 
-         "attendees": 10,
-         "approved": "false"}' "http://127.0.0.1:5000/meetings/4562955852282287"
+        {
+     "approved": "true",
+  "attendees": 10,
+  "club_id": 7418010395347448,
+  "date": "2024-05-15",
+  "id": 7907399222253858,
+  "meeting_description": "Munning away",
+  "room_id": "N330",
+  "seats_left": 10
+  }' "http://127.0.0.1:5000/meetings/7907399222253858"
         '''
 
         response = meetings.update_meeting(request.json)
@@ -81,7 +83,7 @@ def rMeeting_u_d(meeting_id):
         #     return {}   
  
     elif request.method == "DELETE":
-        # curl -X DELETE "http://127.0.0.1:5000/meetings/8778983053005885"
+        # curl -X DELETE "http://127.0.0.1:5000/meetings/3947032078649263"
         response = meetings.remove_meeting(meeting_id)
         # if response["result"] == "success":
         return jsonify(response["message"])
